@@ -1,0 +1,22 @@
+@use '../variables/colors' as c;
+@use '../variables/font-sizes' as fs;
+
+@mixin button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 20rem;
+    border: 1px solid c.$black;
+    border-radius: 12px;
+    background-color: c.$white;
+    color:c.$black;
+
+    p{
+        font-size: fs.$md;
+    }
+
+    img{
+        width: 25%;
+    }
+}

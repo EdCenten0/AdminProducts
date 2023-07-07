@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <title>AdminProducts</title>
   </head>
@@ -26,14 +27,19 @@
         <h2>Products</h2>
         <div class="main__section__container">
           <div class="main__section__container__controls">
-            <button type="submit">Edit</button>
-            <button type="submit"><img src="" alt="delete" /></button>
+            <button type="submit">
+              <p>Edit</p>
+              <img src="../src/Edit.svg" alt="" />
+            </button>
+            <button type="submit">
+              <img src="../src/Delete.svg" alt="delete" />
+            </button>
           </div>
           <div class="main__section__container__table"></div>
         </div>
       </section>
-      <section class="main__section"><h2>Categories</h2></section>
-      <section class="main__section"><h2>Users</h2></section>
+      <!-- <section class="main__section"><h2>Categories</h2></section>
+      <section class="main__section"><h2>Users</h2></section> -->
     </main>
   </body>
 </html>

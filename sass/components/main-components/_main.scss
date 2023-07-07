@@ -1,0 +1,27 @@
+@use '../../variables/font-sizes' as fs;
+@use '../../variables/colors' as c;
+@import '../../mixins/buttons.scss';
+
+.main{
+    border: 1px solid c.$black;
+    border-radius: 12px;
+    width: 85%;
+    height: 90vh;
+
+    &__section{
+        display: flex;
+        flex-direction: column;
+
+        h2{
+            font-size: fs.$xl;
+        }
+
+        &__container{
+            &__controls{
+                button{
+                    @include button;
+                }
+            }
+        }
+    }
+}

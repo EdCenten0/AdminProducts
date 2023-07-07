@@ -1,6 +1,6 @@
 @use '../../variables/font-sizes' as fs;
 @use '../../variables/colors' as c;
-@import '../../mixins/buttons.scss';
+@use '../../mixins/buttons.scss' as btn;
 
 .main{
     background-color: c.$secondary-color;
@@ -21,7 +21,7 @@
         &__container{
             &__controls{
                 button{
-                    @include button;
+                    @include btn.button;
                 }
             }
         }

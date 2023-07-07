@@ -1,3 +1,49 @@
+html {
+  font-size: 62.5%;
+}
 
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  gap: 6rem;
+  margin: 1rem;
+}
+
+.main {
+  border: 1px solid #252525;
+  border-radius: 12px;
+  width: 85%;
+  height: 90vh;
+}
+.main__section {
+  display: flex;
+  flex-direction: column;
+}
+.main__section h2 {
+  font-size: 3.5rem;
+}
+.main__section__container__controls button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 20rem;
+  border: 1px solid #252525;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  color: #252525;
+}
+.main__section__container__controls button p {
+  font-size: 2rem;
+}
+.main__section__container__controls button img {
+  width: 25%;
+}
+
+.aside-menu {
+  border: 1px solid #252525;
+  border-radius: 12px;
+  width: 10%;
+}
 
 /*# sourceMappingURL=style.css.map */

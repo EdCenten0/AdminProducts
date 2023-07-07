@@ -7,9 +7,11 @@ body {
   display: flex;
   gap: 6rem;
   margin: 1rem;
+  background-color: #363B4E;
 }
 
 .main {
+  background-color: #4F3B78;
   border: 1px solid #252525;
   border-radius: 12px;
   width: 85%;
@@ -30,7 +32,7 @@ body {
   width: 20rem;
   border: 1px solid #252525;
   border-radius: 12px;
-  background-color: #f9f9f9;
+  background-color: #C4BBF0;
   color: #252525;
 }
 .main__section__container__controls button p {
@@ -41,6 +43,7 @@ body {
 }
 
 .aside-menu {
+  background-color: #4F3B78;
   border: 1px solid #252525;
   border-radius: 12px;
   width: 10%;

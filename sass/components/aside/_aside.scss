@@ -1,6 +1,7 @@
 @use '../../variables/colors' as c;
 
 .aside-menu{
+    background-color: c.$secondary-color;
     border: 1px solid c.$black;
     border-radius: 12px;
     width: 10%;

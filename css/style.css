@@ -36,12 +36,19 @@ body {
   align-items: center;
   gap: 2rem;
   width: 20rem;
+  height: 5rem;
   border: 1px solid #252525;
   border-radius: 12px;
   background-color: #C4BBF0;
   color: #252525;
   cursor: pointer;
   height: 5rem;
+}
+.main__section__container__controls button:hover {
+  background-color: #d5d1ec;
+}
+.main__section__container__controls button:active {
+  filter: brightness(0.8);
 }
 .main__section__container__controls button p {
   font-size: 2rem;
@@ -64,6 +71,17 @@ body {
   margin-top: 2rem;
 }
 .aside-menu__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 20rem;
+  height: 5rem;
+  border: 1px solid #252525;
+  border-radius: 12px;
+  background-color: #C4BBF0;
+  color: #252525;
+  cursor: pointer;
   background-color: #C4BBF0;
   border-top: 1px solid #252525;
   border-bottom: 1px solid #252525;
@@ -74,6 +92,19 @@ body {
   gap: 1rem;
   font-size: 1.6rem;
   cursor: pointer;
+  width: 100%;
+}
+.aside-menu__button:hover {
+  background-color: #d5d1ec;
+}
+.aside-menu__button:active {
+  filter: brightness(0.8);
+}
+.aside-menu__button p {
+  font-size: 2rem;
+}
+.aside-menu__button img {
+  width: 25%;
 }
 .aside-menu__button img {
   width: 2.5rem;

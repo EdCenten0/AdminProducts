@@ -7,11 +7,20 @@
     align-items: center;
     gap: 2rem;
     width: 20rem;
+    height: 5rem;
     border: 1px solid c.$black;
     border-radius: 12px;
     background-color: c.$fourth-color;
     color:c.$black;
     cursor: pointer;
+
+    &:hover{
+        background-color: c.$fith-color;
+    }
+
+    &:active{
+        filter: brightness(0.8);
+    }
 
     p{
         font-size: fs.$md;

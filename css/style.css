@@ -20,9 +20,15 @@ body {
 .main__section {
   display: flex;
   flex-direction: column;
+  margin: 2rem;
 }
 .main__section h2 {
   font-size: 3.5rem;
+}
+.main__section__container__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
 }
 .main__section__container__controls button {
   display: flex;
@@ -34,6 +40,8 @@ body {
   border-radius: 12px;
   background-color: #C4BBF0;
   color: #252525;
+  cursor: pointer;
+  height: 5rem;
 }
 .main__section__container__controls button p {
   font-size: 2rem;

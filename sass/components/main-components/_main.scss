@@ -13,7 +13,7 @@
     &__section{
         display: flex;
         flex-direction: column;
-        margin: 2rem;
+        margin: .5rem 2rem;
 
         h2{
             font-size: fs.$xl;
@@ -27,6 +27,14 @@
                 button{
                     @include btn.button;
                     height: 5rem;
+                }
+
+                & button:nth-child(2){
+                    width: 6rem;
+
+                    img{
+                        width: 4rem;
+                    }
                 }
             }
         }

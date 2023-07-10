@@ -26,15 +26,16 @@ let dataTable;
 let dataTableIsInitialized = false;
 
 const dataTableOptions = {
-  //scrollX: "2000px",
-  lengthMenu: [5, 10, 15, 20, 100, 200, 500],
+  scrollX: false,
+  lengthMenu: [10, 15, 20, 100, 200, 500],
   columnDefs: [
-    { className: "centered", targets: [0, 1, 2, 3, 4, 5, 6] },
-    { orderable: false, targets: [5, 6] },
+    { className: "centered", targets: [0, 1, 2, 3, 4, 5] },
+    { orderable: false, targets: [5] },
     { searchable: false, targets: [1] },
     //{ width: "50%", targets: [0] }
   ],
-  pageLength: 3,
+  pageLength: 10,
+  paging: true,
   destroy: true,
   language: {
     lengthMenu: "Mostrar _MENU_ registros por página",
@@ -71,6 +72,8 @@ const listProducts = async () => {
     const users = await products();
 
     let content = ``;
+
+    // Status: <td><i class="fa-solid fa-check" style="color: green;"></i></td>
     users.forEach((product, index) => {
       content += `
                 <tr>
@@ -79,7 +82,6 @@ const listProducts = async () => {
                     <td>${product?.price}</td>
                     <td>${product?.description}</td>
                     <td>${product?.category?.name}</td>
-                    <td><i class="fa-solid fa-check" style="color: green;"></i></td>
                     <td>
                         <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
                         <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>

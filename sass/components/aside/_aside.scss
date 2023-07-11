@@ -11,6 +11,8 @@
     flex-direction: column;
     gap: 1rem;
     padding: 0 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
 
     &__button:nth-child(1){
         margin-top: 2rem;
@@ -18,20 +20,22 @@
 
     &__button{
         @include btn.button;
-        background-color: c.$fourth-color;
         border-top: 1px solid c.$black;
         border-bottom: 1px solid c.$black;
         border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        font-size: 1rem;
-        cursor: pointer;
+        font-size: fs.$sm !important;
         width: 100%;
 
+        & picture{
+            align-self: center;
+        }
+
+        & p{
+            font-weight: 300;
+        }
+
         & img{
-            width: 2.5rem;
+            width: 2rem;
         }
     }
 }

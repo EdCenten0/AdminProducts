@@ -8,15 +8,20 @@
     border-radius: 12px;
     width: 85%;
     height: 90vh;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
 
 
     &__section{
         display: flex;
         flex-direction: column;
-        margin: .5rem 2rem;
+        margin: 5rem 2rem;
+        
 
-        h2{
+        &__title{
             font-size: fs.$xl;
+            font-weight: 700;
         }
 
         &__container{

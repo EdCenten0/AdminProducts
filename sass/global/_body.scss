@@ -8,6 +8,5 @@ body{
     font-family: 'Roboto', sans-serif;
     display: flex;
     gap: 6rem;
-    margin: 1rem;
-    background-color: c.$primary-color;
+    background-color: c.$primary-color !important;
 }

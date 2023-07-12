@@ -1,0 +1,32 @@
+@use '../../../variables/colors' as c;
+@use '../../../mixins/buttons.scss' as btn;
+@use '../../../variables/font-sizes' as fs;
+
+
+.main__section__container__table{
+    font-weight: 500;
+    font-size: fs.$vsm;
+    
+}
+
+.table__caption{
+    font-weight: 500;
+    font-size: fs.$sm;
+    color:c.$black;
+}
+
+.dataTables_length{
+    & label{
+        font-weight: 500;
+        font-size: fs.$sm;
+        color:c.$black;
+    }
+}
+
+.dataTables_filter{
+    & label{
+        font-weight: 500;
+        font-size: fs.$sm;
+        color:c.$black; 
+    }
+}

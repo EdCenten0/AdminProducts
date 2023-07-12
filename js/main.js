@@ -1,6 +1,9 @@
 import { getProducts } from "./data/products.js";
 import { getUsers } from "./data/users.js";
 
+let dataTable;
+let dataTableIsInitialized = false;
+
 //I most return the promise
 let products = () => {
   return getProducts()
@@ -22,11 +25,13 @@ let users = () => {
     });
 };
 
-let dataTable;
-let dataTableIsInitialized = false;
+let screenQuery = () => {
+  //Here i must return a number to use on
+  //dataTableOptions to make it responsive
+};
 
 const dataTableOptions = {
-  scrollX: false,
+  scrollY: "300px",
   lengthMenu: [10, 15, 20, 100, 200, 500],
   columnDefs: [
     { className: "centered", targets: [0, 1, 2, 3, 4, 5] },

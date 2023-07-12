@@ -67,6 +67,29 @@ body {
   width: 4rem;
 }
 
+.main__section__container__table {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.table__caption {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #252525;
+}
+
+.dataTables_length label {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #252525;
+}
+
+.dataTables_filter label {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #252525;
+}
+
 .aside-menu {
   background-color: #4F3B78;
   border: 1px solid #252525;

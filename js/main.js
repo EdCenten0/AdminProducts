@@ -38,7 +38,7 @@ const dataTableOptions = {
   paging: true,
   destroy: true,
   language: {
-    lengthMenu: "Mostrar _MENU_ registros por página",
+    lengthMenu: "Cuantos registros por página?: _MENU_ ",
     zeroRecords: "Ningún usuario encontrado",
     info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
     infoEmpty: "Ningún usuario encontrado",

@@ -12030,5 +12030,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.inactive {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

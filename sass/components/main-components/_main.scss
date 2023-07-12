@@ -32,11 +32,17 @@
                 button{
                     @include btn.button;
                     height: 5rem;
+                    
+                    
+                    img{
+                        width: 3rem;
+                    }
                 }
 
                 & button:nth-child(2){
+                    @include btn.button;
                     width: 6rem;
-
+                    
                     img{
                         width: 4rem;
                     }

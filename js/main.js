@@ -4,6 +4,12 @@ import { getUsers } from "./data/users.js";
 let dataTable;
 let dataTableIsInitialized = false;
 
+const products__section = document.querySelector(".products__section");
+const categories__section = document.querySelector(".categories__section");
+const products__button = document.querySelector("#products__button");
+const categories__button = document.querySelector("#categories__button");
+const users__button = document.querySelector("#users__button");
+
 //I most return the promise
 let products = () => {
   return getProducts()
@@ -101,4 +107,11 @@ const listProducts = async () => {
 
 window.addEventListener("load", async () => {
   await initDataTable();
+});
+
+function changeWindow(evnt) {}
+
+categories__button.addEventListener("click", () => {
+  products__section.classList.toggle("inactive");
+  categories__section.classList.toggle("inactive");
 });

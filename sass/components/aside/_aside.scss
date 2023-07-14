@@ -29,14 +29,17 @@
 
         & picture{
             align-self: center;
+            pointer-events: none;
         }
 
         & p{
             font-weight: 300;
+            pointer-events: none;
         }
 
         & img{
             width: 2rem;
+            pointer-events: none;
         }
     }
 }

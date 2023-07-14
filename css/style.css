@@ -163,12 +163,15 @@ body {
 }
 .aside-menu__button picture {
   align-self: center;
+  pointer-events: none;
 }
 .aside-menu__button p {
   font-weight: 300;
+  pointer-events: none;
 }
 .aside-menu__button img {
   width: 2rem;
+  pointer-events: none;
 }
 
 /*!

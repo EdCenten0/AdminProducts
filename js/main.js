@@ -6,9 +6,10 @@ let dataTableIsInitialized = false;
 
 const products__section = document.querySelector(".products__section");
 const categories__section = document.querySelector(".categories__section");
-const products__button = document.querySelector("#products__button");
-const categories__button = document.querySelector("#categories__button");
-const users__button = document.querySelector("#users__button");
+const users__section = document.querySelector(".users__section");
+const products__button = document.getElementById("products__button");
+const categories__button = document.getElementById("categories__button");
+const users__button = document.getElementById("users__button");
 
 //I most return the promise
 let products = () => {
@@ -109,9 +110,34 @@ window.addEventListener("load", async () => {
   await initDataTable();
 });
 
-function changeWindow(evnt) {}
+function changePanel(event) {
+  // console.log(event.target.id);
+  let isProductsPanelActive = !products__section.classList.contains("inactive");
+  let isCategoriesPanelActive =
+    !categories__section.classList.contains("inactive");
+  let isUsersPanelActive = !users__section.classList.contains("inactive");
 
-categories__button.addEventListener("click", () => {
-  products__section.classList.toggle("inactive");
-  categories__section.classList.toggle("inactive");
-});
+  if (isProductsPanelActive && event.target.id == "categories__button") {
+    products__section.classList.add("inactive");
+    categories__section.classList.remove("inactive");
+  } else if (isProductsPanelActive && event.target.id == "users__button") {
+    products__section.classList.add("inactive");
+    users__section.classList.remove("inactive");
+  } else if (isCategoriesPanelActive && event.target.id == "products__button") {
+    categories__section.classList.add("inactive");
+    products__section.classList.remove("inactive");
+  } else if (isCategoriesPanelActive && event.target.id == "users__button") {
+    categories__section.classList.add("inactive");
+    users__section.classList.remove("inactive");
+  } else if (isUsersPanelActive && event.target.id == "products__button") {
+    users__section.classList.add("inactive");
+    products__section.classList.remove("inactive");
+  } else if (isUsersPanelActive && event.target.id == "categories__button") {
+    users__section.classList.add("inactive");
+    categories__section.classList.remove("inactive");
+  }
+}
+
+products__button.addEventListener("click", changePanel);
+categories__button.addEventListener("click", changePanel);
+users__button.addEventListener("click", changePanel);

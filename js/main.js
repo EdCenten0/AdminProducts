@@ -1,4 +1,5 @@
 import { getProducts } from "./data/products.js";
+import { getCategories } from "./data/categories.js";
 import { getUsers } from "./data/users.js";
 
 let dataTable;
@@ -22,6 +23,16 @@ let products = () => {
     });
 };
 
+let categories = () => {
+  return getCategories()
+    .then((APIproducts) => {
+      return APIproducts;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 let users = () => {
   return getUsers()
     .then((APIusers) => {
@@ -33,7 +44,7 @@ let users = () => {
 };
 
 let screenQuery = () => {
-  //Here i must return a number to use on
+  //Here i will return a number to use on
   //dataTableOptions to make it responsive
 };
 

@@ -152,6 +152,59 @@
           </div>
         </div>
       </section>
+
+      <section class="main__section inactive users__section">
+        <h2 class="main__section__title">Users</h2>
+        <div class="main__section__container">
+          <div class="main__section__container__controls">
+            <button type="submit">
+              <p>Edit</p>
+              <img src="../src/Edit.svg" alt="" />
+            </button>
+            <button type="submit">
+              <img src="../src/Delete.svg" alt="delete" />
+            </button>
+          </div>
+          <div class="container my-4 main__section__container__table">
+            <div class="row main__section__container__table__div">
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 col-xl-12 main__section__container__table__div__header"
+              >
+                <table id="datatable_users" class="table table-striped">
+                  <caption class="table__caption">
+                    DataTable.js Demo
+                  </caption>
+                  <thead class="table__head">
+                    <tr class="table__head__content">
+                      <th class="centered table__head__content__title">#</th>
+                      <th class="centered table__head__content__title">
+                        Title
+                      </th>
+                      <th class="centered table__head__content__title">
+                        Price
+                      </th>
+                      <th class="centered table__head__content__title">
+                        Description
+                      </th>
+                      <th class="centered table__head__content__title">
+                        Category
+                      </th>
+                      <!-- <th class="centered">Status</th> -->
+                      <th class="centered table__head__content__title">
+                        Options
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="tableBody_categories"
+                    class="table__content"
+                  ></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- <section class="main__section"><h2>Categories</h2></section>
       <section class="main__section"><h2>Users</h2></section> -->
     </main>

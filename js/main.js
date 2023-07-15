@@ -84,7 +84,7 @@ const initDataTable = async () => {
 
   await listProducts();
 
-  dataTable = $("#datatable_users").DataTable(dataTableOptions);
+  dataTable = $("#datatable_products").DataTable(dataTableOptions);
 
   dataTableIsInitialized = true;
 };

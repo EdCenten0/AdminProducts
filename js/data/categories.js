@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 const API = "https://api.escuelajs.co/api/v1";
 
 function fetchData(urlAPI) {

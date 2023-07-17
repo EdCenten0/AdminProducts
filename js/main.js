@@ -4,8 +4,17 @@ import { getCategories } from "./data/categories.js";
 import { getUsers } from "./data/users.js";
 
 //Datatable
-let dataTable = [undefined, undefined, undefined];
-let dataTableIsInitialized = false;
+let dataTable = {
+  products: undefined,
+  categories: undefined,
+  users: undefined,
+};
+
+let dataTableIsInitialized = {
+  products: false,
+  categories: false,
+  users: false,
+};
 
 //Html elements
 const products__section = document.querySelector(".products__section");
@@ -29,13 +38,17 @@ let products = () => {
 
 let categories = () => {
   return getCategories()
-    .then((APIproducts) => {
-      return APIproducts;
+    .then((APIcategories) => {
+      return APIcategories;
     })
     .catch((err) => {
       console.log(err);
     });
 };
+
+categories()
+  .then((categories) => console.log(categories))
+  .catch((err) => console.log(err));
 
 let users = () => {
   return getUsers()
@@ -81,27 +94,33 @@ const dataTableOptions = {
   },
 };
 
-const initDataTable = async () => {
-  if (dataTableIsInitialized) {
-    dataTable[0].destroy();
+const initProductsDataTable = async () => {
+  if (dataTableIsInitialized.products) {
+    dataTable.products.destroy();
   }
-
   await listProducts();
+  dataTable.products = $("#datatable_products").DataTable(dataTableOptions);
+  dataTableIsInitialized.products = true;
+};
 
-  dataTable[0] = $("#datatable_products").DataTable(dataTableOptions);
-
-  dataTableIsInitialized = true;
+const initCategoriesDataTable = async () => {
+  if (dataTableIsInitialized.categories) {
+    dataTable.categories.destroy();
+  }
+  await listCategories();
+  dataTable.categories = $("#datatable_categories").DataTable(dataTableOptions);
+  dataTableIsInitialized.categories = true;
 };
 
 const listProducts = async () => {
   try {
     //I must call function with await
-    const users = await products();
+    const productsToTable = await products();
 
     let content = ``;
 
     // Status: <td><i class="fa-solid fa-check" style="color: green;"></i></td>
-    users.forEach((product, index) => {
+    productsToTable.forEach((product, index) => {
       content += `
                 <tr>
                     <td>${index + 1}</td>
@@ -121,8 +140,33 @@ const listProducts = async () => {
   }
 };
 
+const listCategories = async () => {
+  try {
+    const categoriesToTable = await categories();
+    let content = ``;
+
+    categoriesToTable.forEach((category, index) => {
+      content += `<tr>
+                      <td>${index + 1}</td>
+                      <td>${category?.id}</td>
+                      <td>${category?.name}</td>
+                      <td>${category?.image}</td>
+                      <td>
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                    </td>
+
+                  </tr>`;
+    });
+    tableBody_categories.innerHTML = content;
+  } catch (ex) {
+    alert(ex);
+  }
+};
+
 window.addEventListener("load", async () => {
-  await initDataTable();
+  await initProductsDataTable();
+  await initCategoriesDataTable();
 });
 
 function changePanel(event) {

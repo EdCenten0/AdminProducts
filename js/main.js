@@ -46,10 +46,6 @@ let categories = () => {
     });
 };
 
-categories()
-  .then((categories) => console.log(categories))
-  .catch((err) => console.log(err));
-
 let users = () => {
   return getUsers()
     .then((APIusers) => {
@@ -66,12 +62,11 @@ let screenQuery = () => {
 };
 
 const dataTableOptions = {
-  scrollY: "300px",
   lengthMenu: [10, 15, 20, 100, 200, 500],
   columnDefs: [
-    { className: "centered", targets: [0, 1, 2, 3, 4, 5] },
-    { orderable: false, targets: [5] },
-    { searchable: false, targets: [1] },
+    { className: "centered" },
+    { orderable: true },
+    { searchable: true },
     //{ width: "50%", targets: [0] }
   ],
   pageLength: 10,
@@ -122,7 +117,7 @@ const listProducts = async () => {
     // Status: <td><i class="fa-solid fa-check" style="color: green;"></i></td>
     productsToTable.forEach((product, index) => {
       content += `
-                <tr>
+                <tr >
                     <td>${index + 1}</td>
                     <td>${product?.title}</td>
                     <td>${product?.price}</td>
@@ -155,7 +150,6 @@ const listCategories = async () => {
                         <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
                         <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
-
                   </tr>`;
     });
     tableBody_categories.innerHTML = content;

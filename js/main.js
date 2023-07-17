@@ -1,10 +1,13 @@
+//Imports
 import { getProducts } from "./data/products.js";
 import { getCategories } from "./data/categories.js";
 import { getUsers } from "./data/users.js";
 
-let dataTable;
+//Datatable
+let dataTable = [undefined, undefined, undefined];
 let dataTableIsInitialized = false;
 
+//Html elements
 const products__section = document.querySelector(".products__section");
 const categories__section = document.querySelector(".categories__section");
 const users__section = document.querySelector(".users__section");
@@ -12,6 +15,7 @@ const products__button = document.getElementById("products__button");
 const categories__button = document.getElementById("categories__button");
 const users__button = document.getElementById("users__button");
 
+//Getting data
 //I most return the promise
 let products = () => {
   return getProducts()
@@ -62,9 +66,9 @@ const dataTableOptions = {
   destroy: true,
   language: {
     lengthMenu: "Cuantos registros por página?: _MENU_ ",
-    zeroRecords: "Ningún usuario encontrado",
+    zeroRecords: "Ningún registro encontrado",
     info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
-    infoEmpty: "Ningún usuario encontrado",
+    infoEmpty: "Ningún registro encontrado",
     infoFiltered: "(filtrados desde _MAX_ registros totales)",
     search: "Buscar:",
     loadingRecords: "Cargando...",
@@ -79,12 +83,12 @@ const dataTableOptions = {
 
 const initDataTable = async () => {
   if (dataTableIsInitialized) {
-    dataTable.destroy();
+    dataTable[0].destroy();
   }
 
   await listProducts();
 
-  dataTable = $("#datatable_products").DataTable(dataTableOptions);
+  dataTable[0] = $("#datatable_products").DataTable(dataTableOptions);
 
   dataTableIsInitialized = true;
 };

@@ -107,6 +107,15 @@ const initCategoriesDataTable = async () => {
   dataTableIsInitialized.categories = true;
 };
 
+const initUsersDataTable = async () => {
+  if (dataTableIsInitialized.users) {
+    dataTable.users.destroy();
+  }
+  await listUsers();
+  dataTable.users = $("#datatable_users").DataTable(dataTableOptions);
+  dataTableIsInitialized.users = true;
+};
+
 const listProducts = async () => {
   try {
     //I must call function with await
@@ -158,9 +167,33 @@ const listCategories = async () => {
   }
 };
 
+const listUsers = async () => {
+  try {
+    const usersTotable = await users();
+    let content = ``;
+
+    usersTotable.forEach((user, index) => {
+      content += `<tr>
+                    <td>${index + 1}</td>
+                    <td>${user?.id}</td>
+                    <td>${user?.email}</td>
+                    <td>${user?.password}</td>
+                    <td>${user?.name}</td>
+                    <td>${user?.role}</td>
+                    <td>${user?.avatar}</td>
+                  </tr>
+      `;
+    });
+    tableBody_users.innerHTML = content;
+  } catch (ex) {
+    alert(ex);
+  }
+};
+
 window.addEventListener("load", async () => {
   await initProductsDataTable();
   await initCategoriesDataTable();
+  await initUsersDataTable();
 });
 
 function changePanel(event) {

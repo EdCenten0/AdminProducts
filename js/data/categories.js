@@ -7,7 +7,7 @@ function fetchData(urlAPI) {
 export async function getCategories() {
   return new Promise((resolve, reject) => {
     fetchData(`${API}/categories`)
-      .then((response) => response.json)
+      .then((response) => response.json())
       .then((categories) => resolve(categories))
       .catch((err) => console.log(err));
   });

@@ -128,6 +128,7 @@ const listProducts = async () => {
       content += `
                 <tr >
                     <td>${index + 1}</td>
+                    <td>${product?.id}</td>
                     <td>${product?.title}</td>
                     <td>${product?.price}</td>
                     <td>${product?.description}</td>

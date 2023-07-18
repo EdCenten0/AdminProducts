@@ -62,35 +62,6 @@ body {
 .main__section__container__controls button img {
   width: 3rem;
 }
-.main__section__container__controls button:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-  gap: 0.5rem;
-  width: 20rem;
-  height: 5rem;
-  border: 1px solid #252525;
-  border-radius: 12px;
-  background-color: #C4BBF0;
-  color: #252525;
-  cursor: pointer;
-  width: 6rem;
-}
-.main__section__container__controls button:nth-child(2):hover {
-  background-color: #d5d1ec;
-}
-.main__section__container__controls button:nth-child(2):active {
-  filter: brightness(0.8);
-}
-.main__section__container__controls button:nth-child(2) p {
-  font-size: 2rem;
-}
-.main__section__container__controls button:nth-child(2) img {
-  width: 25%;
-}
-.main__section__container__controls button:nth-child(2) img {
-  width: 4rem;
-}
 
 .main__section__container__table {
   font-weight: 500;

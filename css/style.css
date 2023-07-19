@@ -22,6 +22,48 @@ body {
 .main__section__new__products {
   position: absolute;
   background-color: #4F3B78;
+  border-radius: 12px;
+  z-index: 10;
+  top: 25%;
+  left: 40%;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+}
+.main__section__new__products__form {
+  padding: 4rem;
+}
+.main__section__new__products__form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.main__section__new__products__form form .block {
+  grid-column: 1/3;
+}
+.main__section__new__products__form form p {
+  margin: 0;
+  padding: 1rem;
+}
+.main__section__new__products__form form p button,
+.main__section__new__products__form form p input,
+.main__section__new__products__form form p textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  background: none;
+  outline: 0;
+  border-bottom: 1px solid #927FBF;
+  color: #C4BBF0;
+}
+.main__section__new__products__form form p button {
+  background-color: #363B4E;
+  border: 0;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+.main__section__new__products__form form p button:hover, .main__section__new__products__form form p button:focus {
+  background-color: #927FBF;
+  color: #4F3B78;
+  outline: 0;
+  transition: background-color 0.3s ease-out;
 }
 .main__section {
   display: flex;

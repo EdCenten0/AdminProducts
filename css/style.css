@@ -7,6 +7,7 @@ body {
   display: flex;
   gap: 6rem;
   background-color: #363B4E !important;
+  position: relative;
 }
 
 .main {
@@ -21,17 +22,22 @@ body {
 }
 .main__section__new__products {
   position: absolute;
-  background-color: rgba(1, 1, 1, 0.4);
-  border-radius: 12px;
   z-index: 10;
-  top: 10%;
-  left: 32%;
-  padding: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main__section__new__products img {
+  width: 2rem;
+  position: absolute;
+  margin: 0.5rem;
 }
 .main__section__new__products__form {
   background-color: #4F3B78;
   border-radius: 12px;
   padding: 4rem;
+  border: 3px solid #252525;
 }
 .main__section__new__products__form form {
   display: grid;

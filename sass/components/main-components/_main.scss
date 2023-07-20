@@ -14,16 +14,18 @@
 
     &__section__new__products{
         position: absolute;
-        background-color: c.$secondary-color;
+        background-color: rgba(1 , 1 , 1, .4);
         border-radius: 12px;
+        
         z-index: 10;
-        top: 25%;
-        left: 40%;
-        box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+        top: 10%;
+        left: 32%;
+        padding: 10rem;
         // margin: -20px 0 0 -10px; 
 
         &__form{
-            
+            background-color: c.$secondary-color;
+            border-radius: 12px;
             padding: 4rem;
             form{
                 display: grid;

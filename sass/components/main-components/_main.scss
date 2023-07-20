@@ -12,7 +12,7 @@
     margin-top: 1rem;
     margin-right: 1rem;
 
-    &__section__new__products{
+    &__section__new{
         position: absolute;
         z-index: 10;
         position: absolute;
@@ -24,6 +24,7 @@
             width: 2rem;
             position: absolute;
             margin: .5rem;
+            cursor: pointer;
         }
 
         &__form{

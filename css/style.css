@@ -20,7 +20,7 @@ body {
   margin-top: 1rem;
   margin-right: 1rem;
 }
-.main__section__new__products {
+.main__section__new {
   position: absolute;
   z-index: 10;
   position: absolute;
@@ -28,31 +28,32 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.main__section__new__products img {
+.main__section__new img {
   width: 2rem;
   position: absolute;
   margin: 0.5rem;
+  cursor: pointer;
 }
-.main__section__new__products__form {
+.main__section__new__form {
   background-color: #4F3B78;
   border-radius: 12px;
   padding: 4rem;
   border: 3px solid #252525;
 }
-.main__section__new__products__form form {
+.main__section__new__form form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.main__section__new__products__form form .block {
+.main__section__new__form form .block {
   grid-column: 1/3;
 }
-.main__section__new__products__form form p {
+.main__section__new__form form p {
   margin: 0;
   padding: 1rem;
 }
-.main__section__new__products__form form p button,
-.main__section__new__products__form form p input,
-.main__section__new__products__form form p textarea {
+.main__section__new__form form p button,
+.main__section__new__form form p input,
+.main__section__new__form form p textarea {
   width: 100%;
   padding: 0.8rem;
   border: none;
@@ -61,13 +62,13 @@ body {
   border-bottom: 1px solid #927FBF;
   color: #C4BBF0;
 }
-.main__section__new__products__form form p button {
+.main__section__new__form form p button {
   background-color: #363B4E;
   border: 0;
   text-transform: uppercase;
   padding: 1rem;
 }
-.main__section__new__products__form form p button:hover, .main__section__new__products__form form p button:focus {
+.main__section__new__form form p button:hover, .main__section__new__form form p button:focus {
   background-color: #927FBF;
   color: #4F3B78;
   outline: 0;

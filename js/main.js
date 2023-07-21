@@ -17,12 +17,15 @@ let dataTableIsInitialized = {
 };
 
 //Html elements
+// Sections
 const products__section = document.querySelector(".products__section");
 const categories__section = document.querySelector(".categories__section");
 const users__section = document.querySelector(".users__section");
 const products__button = document.getElementById("products__button");
 const categories__button = document.getElementById("categories__button");
 const users__button = document.getElementById("users__button");
+
+// Panels to post data
 
 //Getting data
 //I most return the promise
@@ -62,6 +65,7 @@ let screenQuery = () => {
 };
 
 const dataTableOptions = {
+  scrollY: "300px",
   lengthMenu: [10, 15, 20, 100, 200, 500],
   columnDefs: [
     { className: "centered" },

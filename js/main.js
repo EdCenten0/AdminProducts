@@ -30,6 +30,10 @@ const newProducts = document.querySelector(".newProducts");
 const newProducts__button = document.querySelector("#newProducts__button");
 const newProducts__close = document.querySelector("#newProducts__close");
 
+const newCategories = document.querySelector(".newCategories");
+// const newProducts__button = document.querySelector("#newProducts__button");
+// const newProducts__close = document.querySelector("#newProducts__close");
+
 console.log(newProducts__button);
 //Getting data
 //I most return the promise

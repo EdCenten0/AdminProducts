@@ -34,6 +34,10 @@ const newCategories = document.querySelector(".newCategories");
 const newCategories__button = document.querySelector("#newCategory__button");
 const newCategories__close = document.querySelector("#newCategories__close");
 
+const newUsers = document.querySelector(".newUsers");
+const newUsers__button = document.querySelector("#newUsers__button");
+const newUsers__close = document.querySelector("#newUsers__close");
+
 console.log(newProducts__button);
 //Getting data
 //I most return the promise
@@ -241,6 +245,7 @@ products__button.addEventListener("click", changePanel);
 categories__button.addEventListener("click", changePanel);
 users__button.addEventListener("click", changePanel);
 
+//Create registers panels events
 newProducts__button.addEventListener("click", () => {
   newProducts.classList.toggle("inactive");
 });
@@ -253,4 +258,11 @@ newCategories__button.addEventListener("click", () => {
 });
 newCategories__close.addEventListener("click", () => {
   newCategories.classList.toggle("inactive");
+});
+
+newUsers__button.addEventListener("click", () => {
+  newUsers.classList.toggle("inactive");
+});
+newUsers__close.addEventListener("click", () => {
+  newUsers.classList.toggle("inactive");
 });

@@ -26,7 +26,11 @@ const categories__button = document.getElementById("categories__button");
 const users__button = document.getElementById("users__button");
 
 // Panels to post data
+const newProducts = document.querySelector(".newProducts");
+const newProducts__button = document.querySelector("#newProducts__button");
+const newProducts__close = document.querySelector("#newProducts__close");
 
+console.log(newProducts__button);
 //Getting data
 //I most return the promise
 let products = () => {
@@ -232,3 +236,10 @@ function changePanel(event) {
 products__button.addEventListener("click", changePanel);
 categories__button.addEventListener("click", changePanel);
 users__button.addEventListener("click", changePanel);
+
+newProducts__button.addEventListener("click", () => {
+  newProducts.classList.toggle("inactive");
+});
+newProducts__close.addEventListener("click", () => {
+  newProducts.classList.toggle("inactive");
+});

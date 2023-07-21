@@ -149,10 +149,6 @@ const listProducts = async () => {
                     <td>${product?.price}</td>
                     <td>${product?.description}</td>
                     <td>${product?.category?.name}</td>
-                    <td>
-                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                    </td>
                 </tr>`;
     });
     tableBody_products.innerHTML = content;
@@ -172,10 +168,6 @@ const listCategories = async () => {
                       <td>${category?.id}</td>
                       <td>${category?.name}</td>
                       <td>${category?.image}</td>
-                      <td>
-                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                    </td>
                   </tr>`;
     });
     tableBody_categories.innerHTML = content;

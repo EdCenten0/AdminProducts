@@ -31,8 +31,8 @@ const newProducts__button = document.querySelector("#newProducts__button");
 const newProducts__close = document.querySelector("#newProducts__close");
 
 const newCategories = document.querySelector(".newCategories");
-// const newProducts__button = document.querySelector("#newProducts__button");
-// const newProducts__close = document.querySelector("#newProducts__close");
+const newCategories__button = document.querySelector("#newCategory__button");
+const newCategories__close = document.querySelector("#newCategories__close");
 
 console.log(newProducts__button);
 //Getting data
@@ -246,4 +246,11 @@ newProducts__button.addEventListener("click", () => {
 });
 newProducts__close.addEventListener("click", () => {
   newProducts.classList.toggle("inactive");
+});
+
+newCategories__button.addEventListener("click", () => {
+  newCategories.classList.toggle("inactive");
+});
+newCategories__close.addEventListener("click", () => {
+  newCategories.classList.toggle("inactive");
 });

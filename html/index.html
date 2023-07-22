@@ -49,33 +49,33 @@
     <section class="main__section__new newProducts inactive">
       <img id="newProducts__close" src="../src/close.svg" alt="close" />
       <div class="main__section__new__form">
-        <h3>Create a Product</h3>
-        <form action="">
+        <h3 id="product__panelTitle">Create a Product</h3>
+        <form action="" id="product__form">
           <p>
             <label for="Title">Title</label>
-            <input type="text" name="Title" id="form__products__title" />
+            <input type="text" name="Title" id="form__product__title" />
           </p>
           <p>
             <label for="Price">Price</label>
-            <input type="number" name="Price" id="form__products__price" />
+            <input type="number" name="Price" id="form__product__price" />
           </p>
           <p>
             <label for="CategotyID">Category ID</label>
             <input
               type="number"
               name="CategotyID"
-              id="form__products__categoryID"
+              id="form__product__categoryID"
             />
           </p>
           <p>
             <label for="ImageLink">Image Link</label>
-            <input type="text" name="ImageLink" id="form_products__ImageLink" />
+            <input type="text" name="ImageLink" id="form_product__ImageLink" />
           </p>
           <p class="block">
             <label for="Description">Description</label>
             <textarea
               name="Description"
-              id="form__products__description"
+              id="form__product__description"
               rows="_products__"
             ></textarea>
           </p>
@@ -166,7 +166,7 @@
               <p>Create</p>
               <img src="../src/Create.svg" alt="" />
             </button>
-            <button type="submit">
+            <button type="submit" id="editProducts__button">
               <p>Edit</p>
               <img src="../src/Edit.svg" alt="" />
             </button>

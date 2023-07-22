@@ -25,7 +25,7 @@ const products__button = document.getElementById("products__button");
 const categories__button = document.getElementById("categories__button");
 const users__button = document.getElementById("users__button");
 
-// Panels to post data
+// Html elements to post data
 const newProducts = document.querySelector(".newProducts");
 const newProducts__button = document.querySelector("#newProducts__button");
 const newProducts__close = document.querySelector("#newProducts__close");
@@ -37,6 +37,9 @@ const newCategories__close = document.querySelector("#newCategories__close");
 const newUsers = document.querySelector(".newUsers");
 const newUsers__button = document.querySelector("#newUsers__button");
 const newUsers__close = document.querySelector("#newUsers__close");
+
+// Html elements to put data
+const editProducts__button = document.querySelector("#editProducts__button");
 
 console.log(newProducts__button);
 //Getting data
@@ -239,6 +242,8 @@ users__button.addEventListener("click", changePanel);
 
 //Create registers panels events
 newProducts__button.addEventListener("click", () => {
+  const panelTitle = document.querySelector("#product__panelTitle");
+  panelTitle.innerText = "Create a product";
   newProducts.classList.toggle("inactive");
 });
 newProducts__close.addEventListener("click", () => {
@@ -258,3 +263,26 @@ newUsers__button.addEventListener("click", () => {
 newUsers__close.addEventListener("click", () => {
   newUsers.classList.toggle("inactive");
 });
+
+//Edit registers
+
+function setEditPanel(sectionName) {
+  const panelTitle = document.querySelector(`#${sectionName}__panelTitle`);
+  const form = document.querySelector(`#${sectionName}__form`);
+  panelTitle.innerText = `Edit a ${sectionName}`;
+
+  const idField = document.createElement("p");
+  const labelField = document.createElement("label");
+  const inputField = document.createElement("input");
+
+  labelField.innerText = "ID";
+  inputField.setAttribute("type", "text");
+  inputField.setAttribute("id", `form__${sectionName}__id`);
+
+  idField.append(labelField, inputField);
+  form.insertBefore(idField, form.firstChild);
+
+  newProducts.classList.toggle("inactive");
+}
+
+editProducts__button.addEventListener("click", () => setEditPanel("product"));

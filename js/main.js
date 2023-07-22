@@ -40,8 +40,11 @@ const newUsers__close = document.querySelector("#newUsers__close");
 
 // Html elements to put data
 const editProducts__button = document.querySelector("#editProducts__button");
+const editCategories__button = document.querySelector(
+  "#editCategories__button"
+);
+console.log(editCategories__button);
 
-console.log(newProducts__button);
 //Getting data
 //I most return the promise
 let products = () => {
@@ -255,6 +258,12 @@ newProducts__close.addEventListener("click", () => {
 });
 
 newCategories__button.addEventListener("click", () => {
+  const panelTitle = document.querySelector("#category__panelTitle");
+  panelTitle.innerText = "Create a Category";
+
+  if (document.getElementById("id__container") != null) {
+    document.getElementById("id__container").remove();
+  }
   newCategories.classList.toggle("inactive");
 });
 newCategories__close.addEventListener("click", () => {
@@ -288,8 +297,13 @@ function setEditPanel(sectionName) {
     idField.append(labelField, inputField);
     form.insertBefore(idField, form.firstChild);
   }
-
-  newProducts.classList.toggle("inactive");
 }
 
-editProducts__button.addEventListener("click", () => setEditPanel("product"));
+editProducts__button.addEventListener("click", () => {
+  setEditPanel("product");
+  newProducts.classList.toggle("inactive");
+});
+editCategories__button.addEventListener("click", () => {
+  setEditPanel("category");
+  newCategories.classList.toggle("inactive");
+});

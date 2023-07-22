@@ -43,7 +43,7 @@ const editProducts__button = document.querySelector("#editProducts__button");
 const editCategories__button = document.querySelector(
   "#editCategories__button"
 );
-console.log(editCategories__button);
+const editUsers__button = document.querySelector("#editUsers__button");
 
 //Getting data
 //I most return the promise
@@ -271,6 +271,12 @@ newCategories__close.addEventListener("click", () => {
 });
 
 newUsers__button.addEventListener("click", () => {
+  const panelTitle = document.querySelector("#user__panelTitle");
+  panelTitle.innerText = "Create a User";
+
+  if (document.getElementById("id__container") != null) {
+    document.getElementById("id__container").remove();
+  }
   newUsers.classList.toggle("inactive");
 });
 newUsers__close.addEventListener("click", () => {
@@ -306,4 +312,8 @@ editProducts__button.addEventListener("click", () => {
 editCategories__button.addEventListener("click", () => {
   setEditPanel("category");
   newCategories.classList.toggle("inactive");
+});
+editUsers__button.addEventListener("click", () => {
+  setEditPanel("user");
+  newUsers.classList.toggle("inactive");
 });

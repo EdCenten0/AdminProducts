@@ -271,16 +271,19 @@ function setEditPanel(sectionName) {
   const form = document.querySelector(`#${sectionName}__form`);
   panelTitle.innerText = `Edit a ${sectionName}`;
 
-  const idField = document.createElement("p");
-  const labelField = document.createElement("label");
-  const inputField = document.createElement("input");
+  if (document.getElementById("id__container") == null) {
+    const idField = document.createElement("p");
+    const labelField = document.createElement("label");
+    const inputField = document.createElement("input");
 
-  labelField.innerText = "ID";
-  inputField.setAttribute("type", "text");
-  inputField.setAttribute("id", `form__${sectionName}__id`);
+    labelField.innerText = "ID";
+    idField.setAttribute("id", "id__container");
+    inputField.setAttribute("type", "text");
+    inputField.setAttribute("id", `form__${sectionName}__id`);
 
-  idField.append(labelField, inputField);
-  form.insertBefore(idField, form.firstChild);
+    idField.append(labelField, inputField);
+    form.insertBefore(idField, form.firstChild);
+  }
 
   newProducts.classList.toggle("inactive");
 }

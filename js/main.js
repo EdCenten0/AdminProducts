@@ -244,6 +244,10 @@ users__button.addEventListener("click", changePanel);
 newProducts__button.addEventListener("click", () => {
   const panelTitle = document.querySelector("#product__panelTitle");
   panelTitle.innerText = "Create a product";
+
+  if (document.getElementById("id__container") != null) {
+    document.getElementById("id__container").remove();
+  }
   newProducts.classList.toggle("inactive");
 });
 newProducts__close.addEventListener("click", () => {

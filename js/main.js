@@ -61,6 +61,10 @@ const deleteCategories__close = document.querySelector(
   "#deleteCategories__close"
 );
 
+const deleteUsers__panel = document.querySelector(".deleteUsers");
+const deleteUsers__button = document.querySelector("#deleteUsers__button");
+const deleteUsers__close = document.querySelector("#deleteUsers__close");
+
 //Getting data
 //I most return the promise
 let products = () => {
@@ -348,4 +352,11 @@ deleteCategories__button.addEventListener("click", () => {
 });
 deleteCategories__close.addEventListener("click", () => {
   deleteCategories__panel.classList.toggle("inactive");
+});
+
+deleteUsers__button.addEventListener("click", () => {
+  deleteUsers__panel.classList.toggle("inactive");
+});
+deleteUsers__close.addEventListener("click", () => {
+  deleteUsers__panel.classList.toggle("inactive");
 });

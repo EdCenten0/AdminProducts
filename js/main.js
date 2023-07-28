@@ -47,11 +47,19 @@ const editUsers__button = document.querySelector("#editUsers__button");
 
 // Html elements to delete data
 
-const deleteProducts__panel = document.querySelector(".deleteUsers");
+const deleteProducts__panel = document.querySelector(".deleteProducts");
 const deleteProducts__button = document.querySelector(
   "#deleteProducts__button"
 );
 const deleteProducts__close = document.querySelector("#deleteProducts__close");
+
+const deleteCategories__panel = document.querySelector(".deleteCategories");
+const deleteCategories__button = document.querySelector(
+  "#deleteCategories__button"
+);
+const deleteCategories__close = document.querySelector(
+  "#deleteCategories__close"
+);
 
 //Getting data
 //I most return the promise
@@ -333,4 +341,11 @@ deleteProducts__button.addEventListener("click", () => {
 });
 deleteProducts__close.addEventListener("click", () => {
   deleteProducts__panel.classList.toggle("inactive");
+});
+
+deleteCategories__button.addEventListener("click", () => {
+  deleteCategories__panel.classList.toggle("inactive");
+});
+deleteCategories__close.addEventListener("click", () => {
+  deleteCategories__panel.classList.toggle("inactive");
 });

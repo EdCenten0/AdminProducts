@@ -45,6 +45,14 @@ const editCategories__button = document.querySelector(
 );
 const editUsers__button = document.querySelector("#editUsers__button");
 
+// Html elements to delete data
+
+const deleteProducts__panel = document.querySelector(".deleteUsers");
+const deleteProducts__button = document.querySelector(
+  "#deleteProducts__button"
+);
+const deleteProducts__close = document.querySelector("#deleteProducts__close");
+
 //Getting data
 //I most return the promise
 let products = () => {
@@ -89,7 +97,7 @@ const dataTableOptions = {
     { className: "centered" },
     { orderable: true },
     { searchable: true },
-    //{ width: "50%", targets: [0] }
+    // { width: "10%", targets: [0] },
   ],
   pageLength: 10,
   paging: true,
@@ -316,4 +324,13 @@ editCategories__button.addEventListener("click", () => {
 editUsers__button.addEventListener("click", () => {
   setEditPanel("user");
   newUsers.classList.toggle("inactive");
+});
+
+// Delete registers
+
+deleteProducts__button.addEventListener("click", () => {
+  deleteProducts__panel.classList.toggle("inactive");
+});
+deleteProducts__close.addEventListener("click", () => {
+  deleteProducts__panel.classList.toggle("inactive");
 });

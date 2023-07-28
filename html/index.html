@@ -139,6 +139,21 @@
         </form>
       </div>
     </section>
+    <section class="main__section__new deleteUsers inactive">
+      <img id="deleteProducts__close" src="../src/close.svg" alt="close" />
+      <div class="main__section__new__form">
+        <h3 id="product__panelTitle">Delete a Product</h3>
+        <form action="" id="product__form">
+          <p>
+            <label for="ID">ID</label>
+            <input type="text" name="ID" id="form__product__delete__id" />
+          </p>
+          <p class="block">
+            <button type="submit">Delete</button>
+          </p>
+        </form>
+      </div>
+    </section>
     <aside class="aside-menu">
       <div id="products__button" class="aside-menu__button">
         <picture><img src="../src/Shopping-Cart.svg" alt="icon" /></picture>
@@ -170,7 +185,7 @@
               <p>Edit</p>
               <img src="../src/Edit.svg" alt="" />
             </button>
-            <button type="submit">
+            <button type="submit" id="deleteProducts__button">
               <p>Delete</p>
               <img src="../src/Delete2.svg" alt="delete" />
             </button>

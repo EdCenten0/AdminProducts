@@ -67,35 +67,11 @@ const deleteUsers__close = document.querySelector("#deleteUsers__close");
 
 //Getting data
 //I most return the promise
-let products = () => {
-  return getProducts()
-    .then((APIproducts) => {
-      return APIproducts;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+let products = async () => getProducts();
 
-let categories = () => {
-  return getCategories()
-    .then((APIcategories) => {
-      return APIcategories;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+let categories = async () => getCategories();
 
-let users = () => {
-  return getUsers()
-    .then((APIusers) => {
-      return APIusers;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+let users = async () => getUsers();
 
 let screenQuery = () => {
   //Here i will return a number to use on

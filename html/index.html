@@ -50,37 +50,38 @@
       <img id="newProducts__close" src="../src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="product__panelTitle">Create a Product</h3>
+        <span style="color: red" id="product__save_state"></span>
         <form action="" id="product__form">
           <p>
             <label for="Title">Title</label>
-            <input type="text" name="Title" id="form__product__title" />
+            <input type="text" name="Title" id="form__product_title" />
           </p>
           <p>
             <label for="Price">Price</label>
-            <input type="number" name="Price" id="form__product__price" />
+            <input type="number" name="Price" id="form__product_price" />
           </p>
           <p>
             <label for="CategotyID">Category ID</label>
             <input
               type="number"
               name="CategotyID"
-              id="form__product__categoryID"
+              id="form__product_categoryId"
             />
           </p>
           <p>
             <label for="ImageLink">Image Link</label>
-            <input type="text" name="ImageLink" id="form_product__ImageLink" />
+            <input type="text" name="ImageLink" id="form__product_ImageLink" />
           </p>
           <p class="block">
             <label for="Description">Description</label>
             <textarea
               name="Description"
-              id="form__product__description"
+              id="form__product_description"
               rows="_products__"
             ></textarea>
           </p>
           <p class="block">
-            <button type="submit">Save</button>
+            <button id="product__form__save_button" type="button">Save</button>
           </p>
         </form>
       </div>

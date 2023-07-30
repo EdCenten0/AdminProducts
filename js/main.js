@@ -1,7 +1,11 @@
 //Imports
 import { getProducts } from "./data/products.js";
+import { saveProductOnAPI } from "./data/products.js";
+
 import { getCategories } from "./data/categories.js";
+
 import { getUsers } from "./data/users.js";
+
 //
 //Datatable
 let dataTable = {
@@ -29,6 +33,9 @@ const users__button = document.getElementById("users__button");
 const newProducts = document.querySelector(".newProducts");
 const newProducts__button = document.querySelector("#newProducts__button");
 const newProducts__close = document.querySelector("#newProducts__close");
+const product__form__save_button = document.querySelector(
+  "#product__form__save_button"
+);
 
 const newCategories = document.querySelector(".newCategories");
 const newCategories__button = document.querySelector("#newCategory__button");
@@ -239,7 +246,9 @@ products__button.addEventListener("click", changePanel);
 categories__button.addEventListener("click", changePanel);
 users__button.addEventListener("click", changePanel);
 
-//Create registers panels events
+//-------------------------------Create registers--------------------------------------
+
+//panels
 newProducts__button.addEventListener("click", () => {
   const panelTitle = document.querySelector("#product__panelTitle");
   panelTitle.innerText = "Create a product";
@@ -279,7 +288,41 @@ newUsers__close.addEventListener("click", () => {
   newUsers.classList.toggle("inactive");
 });
 
-//Edit registers
+//Post products
+async function saveProduct() {
+  const product__save_state = document.getElementById("product__save_state");
+  const form__product_title = document.getElementById("form__product_title");
+  const form__product_price = document.getElementById("form__product_price");
+  const form__product_description = document.getElementById(
+    "form__product_description"
+  );
+  const form__product_categoryId = document.getElementById(
+    "form__product_categoryId"
+  );
+  const form__product_ImageLink = document.getElementById(
+    "form__product_ImageLink"
+  );
+
+  let productToSave = {
+    title: `${form__product_title.value}`,
+    price: `${form__product_price.value}`,
+    description: `${form__product_description.value}`,
+    categoryId: `${form__product_categoryId.value}`,
+    images: [`${form__product_ImageLink.value}`],
+  };
+
+  if (saveProductOnAPI(productToSave) == true) {
+    product__save_state.innerHTML = "Product have been save";
+  } else {
+    product__save_state.innerHTML = "Error to save product";
+  }
+}
+
+product__form__save_button.addEventListener("click", () => {
+  saveProduct();
+});
+
+//-----------------------------Edit registers----------------------------------------
 
 function setEditPanel(sectionName) {
   const panelTitle = document.querySelector(`#${sectionName}__panelTitle`);
@@ -314,7 +357,7 @@ editUsers__button.addEventListener("click", () => {
   newUsers.classList.toggle("inactive");
 });
 
-// Delete registers
+// -------------------------------------Delete registers--------------------------------
 
 deleteProducts__button.addEventListener("click", () => {
   deleteProducts__panel.classList.toggle("inactive");

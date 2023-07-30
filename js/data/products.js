@@ -25,7 +25,7 @@ export async function getOneProduct(productId) {
   });
 }
 
-export async function saveProduct(bodyParam) {
+export async function saveProductOnAPI(bodyParam) {
   const res = await fetch(`${API}/`, {
     method: "POST",
     headers: {
@@ -35,12 +35,13 @@ export async function saveProduct(bodyParam) {
   });
 
   const data = await res.json();
-  console.log("Saved");
   console.log(res);
 
   if (res.status !== 200) {
-    return "Error:" + res.status + data.message;
+    console.log("error:" + res.status + data.message);
+    return false;
   } else {
-    return "Product has been saved succesfully";
+    console.log("error:" + res.status + data.message);
+    return true;
   }
 }

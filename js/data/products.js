@@ -24,3 +24,23 @@ export async function getOneProduct(productId) {
       .catch((err) => reject(err));
   });
 }
+
+export async function saveProduct(bodyParam) {
+  const res = await fetch(`${API}/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bodyParam),
+  });
+
+  const data = await res.json();
+  console.log("Saved");
+  console.log(res);
+
+  if (res.status !== 200) {
+    return "Error:" + res.status + data.message;
+  } else {
+    return "Product has been saved succesfully";
+  }
+}

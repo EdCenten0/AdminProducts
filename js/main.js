@@ -2,7 +2,7 @@
 import { getProducts } from "./data/products.js";
 import { getCategories } from "./data/categories.js";
 import { getUsers } from "./data/users.js";
-
+//
 //Datatable
 let dataTable = {
   products: undefined,

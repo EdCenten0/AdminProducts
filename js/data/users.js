@@ -48,13 +48,5 @@ export async function deleteUserOnAPI(id) {
     },
   });
 
-  const data = await res.json();
-  console.log(res);
-
-  if (res.ok) {
-    return res;
-  } else {
-    console.log("error:" + res.status + data.message);
-    return false;
-  }
+  return res.status;
 }

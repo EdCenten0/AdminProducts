@@ -511,11 +511,16 @@ async function deleteUser() {
     "form__user__delete__id"
   );
 
-  if (deleteUserOnAPI(form__user__delete__id.value)) {
+  const call = await deleteUserOnAPI(form__user__delete__id.value);
+
+  console.log("call:" + call);
+  if (call === 200) {
+    user__delete_state.style = "color: green";
     user__delete_state.innerHTML = "User has been deleted succesfully";
     await initUsersDataTable();
   } else {
-    user__delete_state.innerHTML = "Error on deleting user";
+    user__delete_state.style = "color: red";
+    user__delete_state.innerHTML = "Error on deleting user, ";
   }
 }
 

@@ -9,7 +9,7 @@ import {
   saveCategoriesOnAPI,
   deleteCategoryOnAPI,
 } from "./data/categories.js";
-import { getUsers, saveUserOnAPI } from "./data/users.js";
+import { getUsers, saveUserOnAPI, deleteUserOnAPI } from "./data/users.js";
 
 //
 //Datatable
@@ -511,7 +511,7 @@ async function deleteUser() {
     "form__user__delete__id"
   );
 
-  if (deleteCategoryOnAPI(form__user__delete__id.value)) {
+  if (deleteUserOnAPI(form__user__delete__id.value)) {
     user__delete_state.innerHTML = "User has been deleted succesfully";
     await initUsersDataTable();
   } else {

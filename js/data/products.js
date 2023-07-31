@@ -5,12 +5,6 @@ function fetchData(urlAPI) {
 }
 
 export async function getProducts() {
-  // return new Promise((resolve, reject) => {
-  //   fetchData(`${API}/products`)
-  //     .then((response) => response.json())
-  //     .then((products) => resolve(products))
-  //     .catch((err) => reject(err));
-  // });
   const response = await window.fetch(API);
   const data = await response.json();
   return data;

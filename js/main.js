@@ -1,7 +1,7 @@
 //Imports
 import { getProducts, saveProductOnAPI } from "./data/products.js";
 import { getCategories, saveCategoriesOnAPI } from "./data/categories.js";
-import { getUsers } from "./data/users.js";
+import { getUsers, saveUserOnAPI } from "./data/users.js";
 
 //
 //Datatable
@@ -36,6 +36,10 @@ const product__form__save_button = document.querySelector(
 
 const category__form__save_button = document.getElementById(
   "category__form__save_button"
+);
+
+const user__form__save_button = document.getElementById(
+  "user__form__save_button"
 );
 
 const newCategories = document.querySelector(".newCategories");
@@ -342,7 +346,7 @@ async function saveCategories() {
 
   if (saveCategoriesOnAPI(categoryToSave)) {
     category__save_state.innerHTML =
-      "Product have been save, recharge to find it on the table";
+      "Category have been save, recharge to find it on the table";
   } else {
     category__save_state.innerHTML = "Error to save product";
   }
@@ -350,6 +354,36 @@ async function saveCategories() {
 
 category__form__save_button.addEventListener("click", () => {
   saveCategories();
+});
+
+// Post users
+
+async function saveUsers() {
+  const user__save_state = document.getElementById("user__save_state");
+  const form__users_name = document.getElementById("form__users_name");
+  const form__users_email = document.getElementById("form__users_email");
+  const form__users_password = document.getElementById("form__users_password");
+  const form__users_avatarLink = document.getElementById(
+    "form__users_avatarLink"
+  );
+
+  let userToSave = {
+    name: `${form__users_name.value}`,
+    email: `${form__users_email.value}`,
+    password: `${form__users_password.value}`,
+    avatar: `${form__users_avatarLink.value}`,
+  };
+
+  if (saveUserOnAPI(userToSave)) {
+    user__save_state.innerHTML =
+      "User have been save, recharge to find it on the table";
+  } else {
+    user__save_state.innerHTML = "Error to save product";
+  }
+}
+
+user__form__save_button.addEventListener("click", () => {
+  saveUsers();
 });
 
 //-----------------------------Edit registers----------------------------------------

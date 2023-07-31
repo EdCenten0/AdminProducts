@@ -114,29 +114,26 @@
       <img id="newUsers__close" src="../src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="user__panelTitle">Create a User</h3>
+        <span style="color: gray" id="user__save_state"></span>
         <form action="" id="user__form">
           <p>
             <label for="Name">Name</label>
-            <input type="text" name="Name" id="form__users__name" />
+            <input type="text" name="Name" id="form__users_name" />
           </p>
           <p>
             <label for="Email">Email</label>
-            <input type="text" name="Email" id="form__users__email" />
+            <input type="text" name="Email" id="form__users_email" />
           </p>
           <p>
             <label for="Password">Password</label>
-            <input type="text" name="Password" id="form__users__password" />
+            <input type="text" name="Password" id="form__users_password" />
           </p>
           <p>
             <label for="Avatar Link">Avatar Link</label>
-            <input
-              type="text"
-              name="Avatar Link"
-              id="form__users__avatarLink"
-            />
+            <input type="text" name="Avatar Link" id="form__users_avatarLink" />
           </p>
           <p class="block">
-            <button type="submit">Save</button>
+            <button id="user__form__save_button" type="button">Save</button>
           </p>
         </form>
       </div>

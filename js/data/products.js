@@ -37,11 +37,11 @@ export async function saveProductOnAPI(bodyParam) {
   const data = await res.json();
   console.log(res);
 
-  if (res.status !== 200) {
-    console.log("error:" + res.status + data.message);
-    return false;
-  } else {
+  if (res.status !== 201) {
     console.log("error:" + res.status + data.message);
     return true;
+  } else {
+    console.log("error:" + res.status + data.message);
+    return false;
   }
 }

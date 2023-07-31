@@ -46,3 +46,22 @@ export async function saveCategoriesOnAPI(bodyParam) {
     return false;
   }
 }
+
+export async function deleteCategoryOnAPI(id) {
+  const res = await fetch(`${API}/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "appication/json",
+    },
+  });
+
+  const data = await res.json();
+  console.log(res);
+
+  if (res.ok) {
+    return true;
+  } else {
+    console.log("error:" + res.status + data.message);
+    return false;
+  }
+}

@@ -4,7 +4,11 @@ import {
   saveProductOnAPI,
   deleteProductOnAPI,
 } from "./data/products.js";
-import { getCategories, saveCategoriesOnAPI } from "./data/categories.js";
+import {
+  getCategories,
+  saveCategoriesOnAPI,
+  deleteCategoryOnAPI,
+} from "./data/categories.js";
 import { getUsers, saveUserOnAPI } from "./data/users.js";
 
 //
@@ -78,6 +82,9 @@ const deleteCategories__button = document.querySelector(
 );
 const deleteCategories__close = document.querySelector(
   "#deleteCategories__close"
+);
+const category__form__delete_button = document.getElementById(
+  "category__form__delete_button"
 );
 
 const deleteUsers__panel = document.querySelector(".deleteUsers");
@@ -471,4 +478,26 @@ async function deleteProduct() {
 
 product__form__delete_button.addEventListener("click", () => {
   deleteProduct();
+});
+
+//Delete categories
+
+async function deleteCategory() {
+  const category__delete_state = document.getElementById(
+    "category__delete_state"
+  );
+  const form__category__delete__id = document.getElementById(
+    "form__category__delete__id"
+  );
+
+  if (deleteCategoryOnAPI(form__category__delete__id.value)) {
+    category__delete_state.innerHTML = "Category has been deleted succesfully";
+    await initCategoriesDataTable();
+  } else {
+    category__delete_state.innerHTML = "Error on deleting category";
+  }
+}
+
+category__form__delete_button.addEventListener("click", () => {
+  deleteCategory();
 });

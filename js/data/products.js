@@ -51,7 +51,7 @@ export async function deleteProductOnAPI(id) {
   const data = await res.json();
   console.log(res);
 
-  if (res.status === 200) {
+  if (res.ok) {
     return res;
   } else {
     console.log("error:" + res.status + data.message);

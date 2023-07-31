@@ -90,7 +90,9 @@ const category__form__delete_button = document.getElementById(
 const deleteUsers__panel = document.querySelector(".deleteUsers");
 const deleteUsers__button = document.querySelector("#deleteUsers__button");
 const deleteUsers__close = document.querySelector("#deleteUsers__close");
-
+const user__form__delete_button = document.getElementById(
+  "user__form__delete_button"
+);
 //Getting data
 //I most return the promise
 let products = async () => getProducts();
@@ -500,4 +502,23 @@ async function deleteCategory() {
 
 category__form__delete_button.addEventListener("click", () => {
   deleteCategory();
+});
+
+//Delete users
+async function deleteUser() {
+  const user__delete_state = document.getElementById("user__delete_state");
+  const form__user__delete__id = document.getElementById(
+    "form__user__delete__id"
+  );
+
+  if (deleteCategoryOnAPI(form__user__delete__id.value)) {
+    user__delete_state.innerHTML = "User has been deleted succesfully";
+    await initUsersDataTable();
+  } else {
+    user__delete_state.innerHTML = "Error on deleting user";
+  }
+}
+
+user__form__delete_button.addEventListener("click", () => {
+  deleteUser();
 });

@@ -39,3 +39,22 @@ export async function saveProductOnAPI(bodyParam) {
     return false;
   }
 }
+
+export async function deleteProductOnAPI(id) {
+  const res = await fetch(`${API}/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "appication/json",
+    },
+  });
+
+  const data = await res.json();
+  console.log(res);
+
+  if (res === true) {
+    return true;
+  } else {
+    console.log("error:" + res.status + data.message);
+    return false;
+  }
+}

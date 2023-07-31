@@ -1,5 +1,9 @@
 //Imports
-import { getProducts, saveProductOnAPI } from "./data/products.js";
+import {
+  getProducts,
+  saveProductOnAPI,
+  deleteProductOnAPI,
+} from "./data/products.js";
 import { getCategories, saveCategoriesOnAPI } from "./data/categories.js";
 import { getUsers, saveUserOnAPI } from "./data/users.js";
 
@@ -64,6 +68,9 @@ const deleteProducts__button = document.querySelector(
   "#deleteProducts__button"
 );
 const deleteProducts__close = document.querySelector("#deleteProducts__close");
+const product__form__delete_button = document.getElementById(
+  "product__form__delete_button"
+);
 
 const deleteCategories__panel = document.querySelector(".deleteCategories");
 const deleteCategories__button = document.querySelector(
@@ -442,4 +449,26 @@ deleteUsers__button.addEventListener("click", () => {
 });
 deleteUsers__close.addEventListener("click", () => {
   deleteUsers__panel.classList.toggle("inactive");
+});
+
+//Delete products
+
+async function deleteProduct() {
+  const product__delete_state = document.getElementById(
+    "product__delete_state"
+  );
+  const form__product__delete__id = document.getElementById(
+    "form__product__delete__id"
+  );
+
+  if (deleteProductOnAPI(form__product__delete__id.value)) {
+    product__delete_state.innerHTML = "Product has been deleted succesfully";
+    initProductsDataTable();
+  } else {
+    product__delete_state.innerHTML = "Error on deleting product";
+  }
+}
+
+product__form__delete_button.addEventListener("click", () => {
+  deleteProduct();
 });

@@ -50,7 +50,7 @@
       <img id="newProducts__close" src="../src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="product__panelTitle">Create a Product</h3>
-        <span style="color: red" id="product__save_state"></span>
+        <span style="color: gray" id="product__save_state"></span>
         <form action="" id="product__form">
           <p>
             <label for="Title">Title</label>
@@ -90,21 +90,22 @@
       <img id="newCategories__close" src="../src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="category__panelTitle">Create a Category</h3>
+        <span style="color: gray" id="category__save_state"></span>
         <form action="" id="category__form">
           <p>
             <label for="Name">Name</label>
-            <input type="text" name="Name" id="form__categories__name" />
+            <input type="text" name="Name" id="form__categories_name" />
           </p>
           <p>
             <label for="ImageLink">Image Link</label>
             <input
               type="text"
               name="ImageLink"
-              id="form__categories__imageLink"
+              id="form__categories_imageLink"
             />
           </p>
           <p class="block">
-            <button type="submit">Save</button>
+            <button id="category__form__save_button" type="button">Save</button>
           </p>
         </form>
       </div>

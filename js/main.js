@@ -1,9 +1,6 @@
 //Imports
-import { getProducts } from "./data/products.js";
-import { saveProductOnAPI } from "./data/products.js";
-
-import { getCategories } from "./data/categories.js";
-
+import { getProducts, saveProductOnAPI } from "./data/products.js";
+import { getCategories, saveCategoriesOnAPI } from "./data/categories.js";
 import { getUsers } from "./data/users.js";
 
 //
@@ -35,6 +32,10 @@ const newProducts__button = document.querySelector("#newProducts__button");
 const newProducts__close = document.querySelector("#newProducts__close");
 const product__form__save_button = document.querySelector(
   "#product__form__save_button"
+);
+
+const category__form__save_button = document.getElementById(
+  "category__form__save_button"
 );
 
 const newCategories = document.querySelector(".newCategories");
@@ -311,8 +312,9 @@ async function saveProduct() {
     images: [`${form__product_ImageLink.value}`],
   };
 
-  if (saveProductOnAPI(productToSave) == true) {
-    product__save_state.innerHTML = "Product have been save";
+  if (saveProductOnAPI(productToSave)) {
+    product__save_state.innerHTML =
+      "Product have been save, recharge to find it on the table";
   } else {
     product__save_state.innerHTML = "Error to save product";
   }
@@ -320,6 +322,34 @@ async function saveProduct() {
 
 product__form__save_button.addEventListener("click", () => {
   saveProduct();
+});
+
+// Post categories
+
+async function saveCategories() {
+  const category__save_state = document.getElementById("category__save_state");
+  const form__categories_name = document.getElementById(
+    "form__categories_name"
+  );
+  const form__categories_imageLink = document.getElementById(
+    "form__categories_imageLink"
+  );
+
+  let categoryToSave = {
+    name: `${form__categories_name.value}`,
+    image: `${form__categories_imageLink.value}`,
+  };
+
+  if (saveCategoriesOnAPI(categoryToSave)) {
+    category__save_state.innerHTML =
+      "Product have been save, recharge to find it on the table";
+  } else {
+    category__save_state.innerHTML = "Error to save product";
+  }
+}
+
+category__form__save_button.addEventListener("click", () => {
+  saveCategories();
 });
 
 //-----------------------------Edit registers----------------------------------------

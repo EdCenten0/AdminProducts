@@ -25,3 +25,24 @@ export async function getOneCategories(categoryId) {
       .catch((err) => reject(err));
   });
 }
+
+export async function saveCategoriesOnAPI(bodyParam) {
+  const res = await fetch(`${API}/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bodyParam),
+  });
+
+  const data = await res.json();
+  console.log(res);
+
+  if (res.status !== 201) {
+    console.log("error:" + res.status + data.message);
+    return true;
+  } else {
+    console.log("error:" + res.status + data.message);
+    return false;
+  }
+}

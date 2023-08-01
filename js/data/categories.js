@@ -55,13 +55,5 @@ export async function deleteCategoryOnAPI(id) {
     },
   });
 
-  const data = await res.json();
-  console.log(res);
-
-  if (res.ok) {
-    return true;
-  } else {
-    console.log("error:" + res.status + data.message);
-    return false;
-  }
+  return res.status;
 }

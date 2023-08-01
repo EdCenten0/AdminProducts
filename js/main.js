@@ -463,6 +463,23 @@ deleteUsers__close.addEventListener("click", () => {
 //Delete products
 
 async function deleteProduct() {
+  // const user__delete_state = document.getElementById("user__delete_state");
+  // const form__user__delete__id = document.getElementById(
+  //   "form__user__delete__id"
+  // );
+
+  // const call = await deleteUserOnAPI(form__user__delete__id.value);
+
+  // console.log("call:" + call);
+  // if (call === 200) {
+  //   user__delete_state.style = "color: green";
+  //   user__delete_state.innerHTML = "User has been deleted succesfully";
+  //   await initUsersDataTable();
+  // } else {
+  //   user__delete_state.style = "color: red";
+  //   user__delete_state.innerHTML = "Error on deleting user, ";
+  // }
+
   const product__delete_state = document.getElementById(
     "product__delete_state"
   );
@@ -470,10 +487,15 @@ async function deleteProduct() {
     "form__product__delete__id"
   );
 
-  if (deleteProductOnAPI(form__product__delete__id.value)) {
+  const call = await deleteProductOnAPI(form__product__delete__id.value);
+  console.log("call:" + call);
+
+  if (call === 200) {
+    product__delete_state.style = "color:green";
     product__delete_state.innerHTML = "Product has been deleted succesfully";
-    initProductsDataTable();
+    await initProductsDataTable();
   } else {
+    product__delete_state.style = "color:red";
     product__delete_state.innerHTML = "Error on deleting product";
   }
 }
@@ -492,10 +514,16 @@ async function deleteCategory() {
     "form__category__delete__id"
   );
 
-  if (deleteCategoryOnAPI(form__category__delete__id.value)) {
+  const call = await deleteCategoryOnAPI(form__category__delete__id.value);
+
+  console.log("call:" + call);
+
+  if (call === 200) {
+    category__delete_state.style = "color: green";
     category__delete_state.innerHTML = "Category has been deleted succesfully";
     await initCategoriesDataTable();
   } else {
+    category__delete_state.style = "color:red";
     category__delete_state.innerHTML = "Error on deleting category";
   }
 }
@@ -520,7 +548,7 @@ async function deleteUser() {
     await initUsersDataTable();
   } else {
     user__delete_state.style = "color: red";
-    user__delete_state.innerHTML = "Error on deleting user, ";
+    user__delete_state.innerHTML = "Error on deleting user";
   }
 }
 

@@ -365,10 +365,14 @@ async function saveCategories() {
     image: `${form__categories_imageLink.value}`,
   };
 
-  if (saveCategoriesOnAPI(categoryToSave)) {
-    category__save_state.innerHTML =
-      "Category have been save, recharge to find it on the table";
+  const call = await saveCategoriesOnAPI(categoryToSave);
+
+  if (call === 201) {
+    category__save_state.style = "color: green";
+    category__save_state.innerHTML = "Category have been save";
+    await initCategoriesDataTable();
   } else {
+    category__save_state.style = "color: red";
     category__save_state.innerHTML = "Error to save product";
   }
 }

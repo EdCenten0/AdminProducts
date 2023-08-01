@@ -28,16 +28,7 @@ export async function saveProductOnAPI(bodyParam) {
     body: JSON.stringify(bodyParam),
   });
 
-  const data = await res.json();
-  console.log(res);
-
-  if (res.status !== 201) {
-    console.log("error:" + res.status + data.message);
-    return true;
-  } else {
-    console.log("error:" + res.status + data.message);
-    return false;
-  }
+  return res.status;
 }
 
 export async function deleteProductOnAPI(id) {

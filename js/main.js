@@ -332,10 +332,15 @@ async function saveProduct() {
     images: [`${form__product_ImageLink.value}`],
   };
 
-  if (saveProductOnAPI(productToSave)) {
-    product__save_state.innerHTML =
-      "Product have been save, recharge to find it on the table";
+  const call = await saveProductOnAPI(productToSave);
+  console.log(call);
+
+  if (call === 201) {
+    product__save_state.style = "color: green";
+    product__save_state.innerHTML = "Product have been save";
+    await initProductsDataTable();
   } else {
+    product__save_state.style = "color: red";
     product__save_state.innerHTML = "Error to save product";
   }
 }
@@ -463,23 +468,6 @@ deleteUsers__close.addEventListener("click", () => {
 //Delete products
 
 async function deleteProduct() {
-  // const user__delete_state = document.getElementById("user__delete_state");
-  // const form__user__delete__id = document.getElementById(
-  //   "form__user__delete__id"
-  // );
-
-  // const call = await deleteUserOnAPI(form__user__delete__id.value);
-
-  // console.log("call:" + call);
-  // if (call === 200) {
-  //   user__delete_state.style = "color: green";
-  //   user__delete_state.innerHTML = "User has been deleted succesfully";
-  //   await initUsersDataTable();
-  // } else {
-  //   user__delete_state.style = "color: red";
-  //   user__delete_state.innerHTML = "Error on deleting user, ";
-  // }
-
   const product__delete_state = document.getElementById(
     "product__delete_state"
   );

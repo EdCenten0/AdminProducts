@@ -399,10 +399,14 @@ async function saveUsers() {
     avatar: `${form__users_avatarLink.value}`,
   };
 
-  if (saveUserOnAPI(userToSave)) {
-    user__save_state.innerHTML =
-      "User have been save, recharge to find it on the table";
+  const call = await saveUserOnAPI(userToSave);
+
+  if (call === 201) {
+    user__save_state.style = "color: green";
+    user__save_state.innerHTML = "User have been save";
+    await initUsersDataTable();
   } else {
+    user__save_state.style = "color: red";
     user__save_state.innerHTML = "Error to save product";
   }
 }

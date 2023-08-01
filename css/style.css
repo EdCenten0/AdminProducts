@@ -39,6 +39,7 @@ body {
   border-radius: 12px;
   padding: 4rem;
   border: 3px solid #252525;
+  width: fit-content;
 }
 .main__section__new__form form {
   display: grid;

@@ -28,7 +28,7 @@ export async function saveProductOnAPI(bodyParam) {
     body: JSON.stringify(bodyParam),
   });
 
-  return res.status;
+  return res;
 }
 
 export async function deleteProductOnAPI(id) {
@@ -39,5 +39,5 @@ export async function deleteProductOnAPI(id) {
     },
   });
 
-  return res.status;
+  return res;
 }

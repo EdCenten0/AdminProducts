@@ -28,7 +28,7 @@ export async function saveUserOnAPI(bodyParam) {
     body: JSON.stringify(bodyParam),
   });
 
-  return res.status;
+  return res;
 }
 
 export async function deleteUserOnAPI(id) {
@@ -39,5 +39,5 @@ export async function deleteUserOnAPI(id) {
     },
   });
 
-  return res.status;
+  return res;
 }

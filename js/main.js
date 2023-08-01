@@ -333,15 +333,17 @@ async function saveProduct() {
   };
 
   const call = await saveProductOnAPI(productToSave);
-  console.log(call);
+  console.log(call.status);
 
-  if (call === 201) {
+  if (call.status === 201) {
     product__save_state.style = "color: green";
     product__save_state.innerHTML = "Product have been save";
     await initProductsDataTable();
   } else {
-    product__save_state.style = "color: red";
-    product__save_state.innerHTML = "Error to save product";
+    let info = await call.json();
+    console.log(info);
+    product__save_state.style = "color: red; transition:all 1s ease;";
+    product__save_state.innerHTML = "Error to save product: " + info.message;
   }
 }
 
@@ -367,13 +369,14 @@ async function saveCategories() {
 
   const call = await saveCategoriesOnAPI(categoryToSave);
 
-  if (call === 201) {
+  if (call.status === 201) {
     category__save_state.style = "color: green";
     category__save_state.innerHTML = "Category have been save";
     await initCategoriesDataTable();
   } else {
-    category__save_state.style = "color: red";
-    category__save_state.innerHTML = "Error to save product";
+    let info = await call.json();
+    category__save_state.style = "color: red; transition: all 1s ease;";
+    category__save_state.innerHTML = "Error to save product: " + info.message;
   }
 }
 
@@ -401,13 +404,14 @@ async function saveUsers() {
 
   const call = await saveUserOnAPI(userToSave);
 
-  if (call === 201) {
+  if (call.status === 201) {
     user__save_state.style = "color: green";
     user__save_state.innerHTML = "User have been save";
     await initUsersDataTable();
   } else {
-    user__save_state.style = "color: red";
-    user__save_state.innerHTML = "Error to save product";
+    let info = await call.json();
+    user__save_state.style = "color: red; transition:all 1s ease;";
+    user__save_state.innerHTML = "Error to save product: " + info.message;
   }
 }
 
@@ -484,15 +488,18 @@ async function deleteProduct() {
   );
 
   const call = await deleteProductOnAPI(form__product__delete__id.value);
-  console.log("call:" + call);
+  console.log("call:" + call.status);
 
-  if (call === 200) {
+  if (call.status === 200) {
     product__delete_state.style = "color:green";
     product__delete_state.innerHTML = "Product has been deleted succesfully";
     await initProductsDataTable();
   } else {
-    product__delete_state.style = "color:red";
-    product__delete_state.innerHTML = "Error on deleting product";
+    let info = await call.json();
+    console.log(info);
+    product__delete_state.style = "color: red; transition:all 1s ease;";
+    product__delete_state.innerHTML =
+      "Error on deleting product: " + info.message;
   }
 }
 
@@ -512,15 +519,17 @@ async function deleteCategory() {
 
   const call = await deleteCategoryOnAPI(form__category__delete__id.value);
 
-  console.log("call:" + call);
+  console.log("call:" + call.status);
 
-  if (call === 200) {
+  if (call.status === 200) {
     category__delete_state.style = "color: green";
     category__delete_state.innerHTML = "Category has been deleted succesfully";
     await initCategoriesDataTable();
   } else {
-    category__delete_state.style = "color:red";
-    category__delete_state.innerHTML = "Error on deleting category";
+    let info = await call.json();
+    category__delete_state.style = "color:red; transition: all 1s ease;";
+    category__delete_state.innerHTML =
+      "Error on deleting category: " + info.message;
   }
 }
 
@@ -537,14 +546,15 @@ async function deleteUser() {
 
   const call = await deleteUserOnAPI(form__user__delete__id.value);
 
-  console.log("call:" + call);
-  if (call === 200) {
+  console.log("call:" + call.status);
+  if (call.status === 200) {
     user__delete_state.style = "color: green";
     user__delete_state.innerHTML = "User has been deleted succesfully";
     await initUsersDataTable();
   } else {
-    user__delete_state.style = "color: red";
-    user__delete_state.innerHTML = "Error on deleting user";
+    let info = await call.json();
+    user__delete_state.style = "color: red; transition:all 1s ease;";
+    user__delete_state.innerHTML = "Error on deleting user: " + info.message;
   }
 }
 

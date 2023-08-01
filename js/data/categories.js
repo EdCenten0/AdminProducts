@@ -35,7 +35,7 @@ export async function saveCategoriesOnAPI(bodyParam) {
     body: JSON.stringify(bodyParam),
   });
 
-  return res.status;
+  return res;
 }
 
 export async function deleteCategoryOnAPI(id) {
@@ -46,5 +46,5 @@ export async function deleteCategoryOnAPI(id) {
     },
   });
 
-  return res.status;
+  return res;
 }

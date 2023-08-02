@@ -2,6 +2,7 @@
 import {
   getProducts,
   saveProductOnAPI,
+  updateProductOnAPI,
   deleteProductOnAPI,
 } from "./data/products.js";
 import {
@@ -347,9 +348,9 @@ async function saveProduct() {
   }
 }
 
-product__form__save_button.addEventListener("click", () => {
-  saveProduct();
-});
+// product__form__save_button.addEventListener("click", () => {
+//   saveProduct();
+// });
 
 // Post categories
 
@@ -434,7 +435,7 @@ function setEditPanel(sectionName) {
     labelField.innerText = "ID";
     idField.setAttribute("id", "id__container");
     inputField.setAttribute("type", "text");
-    inputField.setAttribute("id", `form__${sectionName}__id`);
+    inputField.setAttribute("id", `form__${sectionName}_id`);
 
     idField.append(labelField, inputField);
     form.insertBefore(idField, form.firstChild);
@@ -452,6 +453,67 @@ editCategories__button.addEventListener("click", () => {
 editUsers__button.addEventListener("click", () => {
   setEditPanel("user");
   newUsers.classList.toggle("inactive");
+});
+
+//Edit products
+
+async function editProduct() {
+  const product__save_state = document.getElementById("product__save_state");
+  const form__product_title = document.getElementById("form__product_title");
+  const form__product_price = document.getElementById("form__product_price");
+  const form__product_description = document.getElementById(
+    "form__product_description"
+  );
+  const form__product_categoryId = document.getElementById(
+    "form__product_categoryId"
+  );
+  const form__product_ImageLink = document.getElementById(
+    "form__product_ImageLink"
+  );
+  const form__product_id = document.getElementById("form__product_id");
+
+  // let productToSave = {
+  //   title: `${form__product_title.value}`,
+  //   price: `${form__product_price.value}`,
+  //   description: `${form__product_description.value}`,
+  //   categoryId: `${form__product_categoryId.value}`,
+  //   images: [`${form__product_ImageLink.value}`],
+  // };
+
+  let productToSave = {};
+
+  if (!form__product_title.value.length == 0) {
+    productToSave.title = form__product_title.value;
+  }
+  if (!form__product_price.value.length == 0) {
+    productToSave.price = form__product_price.value;
+  }
+  if (!form__product_description.value.length == 0) {
+    productToSave.description = form__product_description.value;
+  }
+  if (!form__product_categoryId.value.length == 0) {
+    productToSave.categoryId = form__product_categoryId.value;
+  }
+  if (!form__product_ImageLink.value.length == 0) {
+    productToSave.images = [form__product_ImageLink.value];
+  }
+
+  const call = await updateProductOnAPI(productToSave, form__product_id.value);
+  if (call.status === 200) {
+    console.log(await call.json());
+    product__save_state.style = "color:green";
+    product__save_state.innerHTML = "Product has been edited succesfully";
+    await initProductsDataTable();
+  } else {
+    let info = await call.json();
+    product__save_state.style = "color:red; transition:all 1s ease;";
+    product__save_state.innerHTML = "Error to edit product: " + info.message;
+  }
+  console.log(call.status);
+}
+
+product__form__save_button.addEventListener("click", () => {
+  editProduct();
 });
 
 // -------------------------------------Delete registers--------------------------------

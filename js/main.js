@@ -472,14 +472,6 @@ async function editProduct() {
   );
   const form__product_id = document.getElementById("form__product_id");
 
-  // let productToSave = {
-  //   title: `${form__product_title.value}`,
-  //   price: `${form__product_price.value}`,
-  //   description: `${form__product_description.value}`,
-  //   categoryId: `${form__product_categoryId.value}`,
-  //   images: [`${form__product_ImageLink.value}`],
-  // };
-
   let productToSave = {};
 
   if (!form__product_title.value.length == 0) {
@@ -513,7 +505,11 @@ async function editProduct() {
 }
 
 product__form__save_button.addEventListener("click", () => {
-  editProduct();
+  if (document.getElementById("form__product_id") == null) {
+    saveProduct();
+  } else {
+    editProduct();
+  }
 });
 
 // -------------------------------------Delete registers--------------------------------

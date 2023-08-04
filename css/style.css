@@ -1,0 +1,263 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  gap: 6rem;
+  background-color: #363B4E !important;
+  position: relative;
+}
+
+.main {
+  background-color: #4F3B78;
+  border: 1px solid #252525;
+  border-radius: 12px;
+  width: 85%;
+  height: 90vh;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+@media screen and (max-width: 1025px) {
+  .main {
+    margin: 4rem auto;
+  }
+}
+@media screen and (max-width: 468px) {
+  .main {
+    margin: 3rem auto;
+  }
+}
+.main__section__new {
+  position: absolute;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main__section__new img {
+  width: 2rem;
+  position: absolute;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.main__section__new__form {
+  background-color: #4F3B78;
+  border-radius: 12px;
+  padding: 4rem;
+  border: 3px solid #252525;
+  width: fit-content;
+}
+@media screen and (max-width: 468px) {
+  .main__section__new__form {
+    padding: 4rem 1rem;
+  }
+}
+.main__section__new__form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.main__section__new__form form .block {
+  grid-column: 1/3;
+}
+.main__section__new__form form p {
+  margin: 0;
+  padding: 1rem;
+}
+@media screen and (max-width: 468px) {
+  .main__section__new__form form p {
+    padding: 1rem;
+  }
+}
+.main__section__new__form form p button,
+.main__section__new__form form p input,
+.main__section__new__form form p textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  background: none;
+  outline: 0;
+  border-bottom: 1px solid #927FBF;
+  color: #C4BBF0;
+}
+@media screen and (max-width: 468px) {
+  .main__section__new__form form p button,
+  .main__section__new__form form p input,
+  .main__section__new__form form p textarea {
+    padding: 0;
+  }
+}
+.main__section__new__form form p button {
+  background-color: #363B4E;
+  border: 0;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+.main__section__new__form form p button:hover, .main__section__new__form form p button:focus {
+  background-color: #927FBF;
+  color: #4F3B78;
+  outline: 0;
+  transition: background-color 0.3s ease-out;
+}
+.main__section {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 2rem;
+}
+.main__section__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.main__section__container__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+}
+@media screen and (max-width: 768px) {
+  .main__section__container__controls {
+    justify-content: space-around;
+    gap: 1rem;
+  }
+}
+.main__section__container__controls button {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 0.5rem;
+  width: 20rem;
+  height: 5rem;
+  border: 1px solid #252525;
+  border-radius: 12px;
+  background-color: #C4BBF0;
+  color: #252525;
+  cursor: pointer;
+  height: 5rem;
+}
+.main__section__container__controls button:hover {
+  background-color: #d5d1ec;
+}
+.main__section__container__controls button:active {
+  filter: brightness(0.8);
+}
+.main__section__container__controls button p {
+  font-size: 2rem;
+}
+.main__section__container__controls button img {
+  width: 25%;
+}
+@media screen and (max-width: 468px) {
+  .main__section__container__controls button p {
+    margin: auto 0;
+    font-size: 1.2rem;
+  }
+}
+.main__section__container__controls button img {
+  width: 3rem;
+}
+@media screen and (max-width: 468px) {
+  .main__section__container__controls button img {
+    width: 2rem;
+    margin: auto 0;
+  }
+}
+
+.main__section__container__table {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.table__caption {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #252525;
+}
+
+.dataTables_length label {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #252525;
+}
+
+.dataTables_filter label {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #252525;
+}
+
+.aside-menu {
+  background-color: #4F3B78;
+  border: 1px solid #252525;
+  border-radius: 12px;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.aside-menu__button:nth-child(1) {
+  margin-top: 2rem;
+}
+.aside-menu__button {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 0.5rem;
+  width: 20rem;
+  height: 5rem;
+  border: 1px solid #252525;
+  border-radius: 12px;
+  background-color: #C4BBF0;
+  color: #252525;
+  cursor: pointer;
+  border-top: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+  border-radius: 5px;
+  font-size: 1.6rem !important;
+  width: 100%;
+}
+.aside-menu__button:hover {
+  background-color: #d5d1ec;
+}
+.aside-menu__button:active {
+  filter: brightness(0.8);
+}
+.aside-menu__button p {
+  font-size: 2rem;
+}
+.aside-menu__button img {
+  width: 25%;
+}
+@media screen and (max-width: 468px) {
+  .aside-menu__button p {
+    margin: auto 0;
+    font-size: 1.2rem;
+  }
+}
+.aside-menu__button picture {
+  align-self: center;
+  pointer-events: none;
+}
+.aside-menu__button p {
+  font-weight: 300;
+  pointer-events: none;
+}
+.aside-menu__button img {
+  width: 2rem;
+  pointer-events: none;
+}
+@media screen and (max-width: 1025px) {
+  .aside-menu {
+    display: none;
+  }
+}
+
+.inactive {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

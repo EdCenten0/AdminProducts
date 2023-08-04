@@ -1,0 +1,40 @@
+@use '../variables/colors' as c;
+@use '../variables/font-sizes' as fs;
+@use './media_queries.scss' as mq;
+
+@mixin button{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    gap:.5rem;
+    width: 20rem;
+    height: 5rem;
+    border: 1px solid c.$black;
+    border-radius: 12px;
+    background-color: c.$fourth-color;
+    color:c.$black;
+    cursor: pointer;
+
+    &:hover{
+        background-color: c.$fith-color;
+    }
+
+    &:active{
+        filter: brightness(0.8);
+    }
+
+    p{
+        font-size: fs.$md;
+    }
+
+    img{
+        width: 25%;
+    }
+
+    @include mq.mobile{
+        p{
+            margin: auto 0;
+            font-size: fs.$vsm;
+        }
+    }
+}

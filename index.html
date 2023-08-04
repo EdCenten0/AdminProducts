@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Animate CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- DataTable -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+    />
+
+    <!-- Normalize -->
+    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Title -->
+    <title>AdminProducts</title>
+  </head>
+  <body>
+    <section class="main__section__new newProducts inactive">
+      <img id="newProducts__close" src="../src/close.svg" alt="close" />
+      <div class="main__section__new__form">
+        <h3 id="product__panelTitle">Create a Product</h3>
+        <span
+          style="color: gray; max-width: 100px"
+          id="product__save_state"
+        ></span>
+        <form action="" id="product__form">
+          <p>
+            <label for="Title">Title</label>
+            <input type="text" name="Title" id="form__product_title" />
+          </p>
+          <p>
+            <label for="Price">Price</label>
+            <input type="number" name="Price" id="form__product_price" />
+          </p>
+          <p>
+            <label for="CategotyID">Category ID</label>
+            <input
+              type="number"
+              name="CategotyID"
+              id="form__product_categoryId"
+            />
+          </p>
+          <p>
+            <label for="ImageLink">Image Link</label>
+            <input type="text" name="ImageLink" id="form__product_ImageLink" />
+          </p>
+          <p class="block">
+            <label for="Description">Description</label>
+            <textarea
+              name="Description"
+              id="form__product_description"
+              rows="_products__"
+            ></textarea>
+          </p>
+          <p class="block">
+            <button id="product__form__save_button" type="button">Save</button>
+          </p>
+        </form>
+      </div>
+    </section>
+    <section class="main__section__new newCategories inactive">
+      <img id="newCategories__close" src="../src/close.svg" alt="close" />
+      <div class="main__section__new__form">
+        <h3 id="category__panelTitle">Create a Category</h3>
+        <span style="color: gray" id="category__save_state"></span>
+        <form action="" id="category__form">
+          <p>
+            <label for="Name">Name</label>
+            <input type="text" name="Name" id="form__categories_name" />
+          </p>
+          <p>
+            <label for="ImageLink">Image Link</label>
+            <input
+              type="text"
+              name="ImageLink"
+              id="form__categories_imageLink"
+            />
+          </p>
+          <p class="block">
+            <button id="category__form__save_button" type="button">Save</button>
+          </p>
+        </form>
+      </div>
+    </section>
+    <section class="main__section__new newUsers inactive">
+      <img id="newUsers__close" src="../src/close.svg" alt="close" />
+      <div class="main__section__new__form">
+        <h3 id="user__panelTitle">Create a User</h3>
+        <span style="color: gray" id="user__save_state"></span>
+        <form action="" id="user__form">
+          <p>
+            <label for="Name">Name</label>
+            <input type="text" name="Name" id="form__users_name" />
+          </p>
+          <p>
+            <label for="Email">Email</label>
+            <input type="text" name="Email" id="form__users_email" />
+          </p>
+          <p>
+            <label for="Password">Password</label>
+            <input type="text" name="Password" id="form__users_password" />
+          </p>
+          <p>
+            <label for="Avatar Link">Avatar Link</label>
+            <input type="text" name="Avatar Link" id="form__users_avatarLink" />
+          </p>
+          <p class="block">
+            <button id="user__form__save_button" type="button">Save</button>
+          </p>
+        </form>
+      </div>
+    </section>
+    <section class="main__section__new deleteProducts inactive">
+      <img id="deleteProducts__close" src="../src/close.svg" alt="close" />
+      <div class="main__section__new__form">
+        <h3 id="product__panelTitle">Delete a Product</h3>
+        <span style="color: gray" id="product__delete_state"></span>
+        <form action="" id="product__form">
+          <p>
+            <label for="ID">ID</label>
+            <input type="text" name="ID" id="form__product__delete__id" />
+          </p>
+          <p class="block">
+            <button id="product__form__delete_button" type="button">
+              Delete
+            </button>
+          </p>
+        </form>
+      </div>
+    </section>
+    <section class="main__section__new deleteCategories inactive">
+      <img id="deleteCategories__close" src="../src/close.svg" alt="close" />
+      <div class="main__section__new__form">
+        <h3 id="product__panelTitle">Delete a Category</h3>
+        <span style="color: gray" id="category__delete_state"></span>
+        <form action="" id="product__form">
+          <p>
+            <label for="ID">ID</label>
+            <input type="text" name="ID" id="form__category__delete__id" />
+          </p>
+          <p class="block">
+            <button id="category__form__delete_button" type="button">
+              Delete
+            </button>
+          </p>
+        </form>
+      </div>
+    </section>
+    <section class="main__section__new deleteUsers inactive">
+      <img id="deleteUsers__close" src="../src/close.svg" alt="close" />
+      <div class="main__section__new__form">
+        <h3 id="product__panelTitle">Delete a User</h3>
+        <span style="color: gray" id="user__delete_state"></span>
+        <form action="" id="product__form">
+          <p>
+            <label for="ID">ID</label>
+            <input type="text" name="ID" id="form__user__delete__id" />
+          </p>
+          <p class="block">
+            <button id="user__form__delete_button" type="button">Delete</button>
+          </p>
+        </form>
+      </div>
+    </section>
+    <aside class="aside-menu">
+      <div id="products__button" class="aside-menu__button">
+        <picture><img src="../src/Shopping-Cart.svg" alt="icon" /></picture>
+        <p>Products</p>
+      </div>
+      <div id="categories__button" class="aside-menu__button">
+        <picture><img src="../src/categories.svg" alt="icon" /></picture>
+        <p>Categories</p>
+      </div>
+      <div id="users__button" class="aside-menu__button">
+        <picture><img src="../src/user.svg" alt="icon" /></picture>
+        <p>Users</p>
+      </div>
+    </aside>
+    <main class="main">
+      <section class="main__section products__section">
+        <h2 class="main__section__title">Products</h2>
+        <div class="main__section__container">
+          <div class="main__section__container__controls">
+            <button
+              type="submit"
+              id="newProducts__button"
+              class="main__section__container__controls__newRegister"
+            >
+              <p>Create</p>
+              <img src="../src/Create.svg" alt="" />
+            </button>
+            <button type="submit" id="editProducts__button">
+              <p>Edit</p>
+              <img src="../src/Edit.svg" alt="" />
+            </button>
+            <button type="submit" id="deleteProducts__button">
+              <p>Delete</p>
+              <img src="../src/Delete2.svg" alt="delete" />
+            </button>
+          </div>
+          <div class="container my-4 main__section__container__table">
+            <div class="row main__section__container__table__div">
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 col-xl-12 main__section__container__table__div__header"
+              >
+                <table id="datatable_products" class="table table-striped">
+                  <caption class="table__caption">
+                    DataTable.js Demo
+                  </caption>
+                  <thead class="table__head">
+                    <tr class="table__head__content">
+                      <th class="centered table__head__content__title">#</th>
+                      <th class="centered table__head__content__title">ID</th>
+                      <th class="centered table__head__content__title">
+                        Title
+                      </th>
+                      <th class="centered table__head__content__title">
+                        Price
+                      </th>
+                      <th class="centered table__head__content__title">
+                        Description
+                      </th>
+                      <th class="centered table__head__content__title">
+                        Category
+                      </th>
+                      <!-- <th class="centered">Status</th> -->
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody_products" class="table__content"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section inactive categories__section">
+        <h2 class="main__section__title">Categories</h2>
+        <div class="main__section__container">
+          <div class="main__section__container__controls">
+            <button
+              type="submit"
+              id="newCategory__button"
+              class="main__section__container__controls__newRegister"
+            >
+              <p>Create</p>
+              <img src="../src/Create.svg" alt="" />
+            </button>
+            <button type="submit" id="editCategories__button">
+              <p>Edit</p>
+              <img src="../src/Edit.svg" alt="" />
+            </button>
+            <button type="submit" id="deleteCategories__button">
+              <p>Delete</p>
+              <img src="../src/Delete2.svg" alt="delete" />
+            </button>
+          </div>
+          <div class="container my-4 main__section__container__table">
+            <div class="row main__section__container__table__div">
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 col-xl-12 main__section__container__table__div__header"
+              >
+                <table id="datatable_categories" class="table table-striped">
+                  <caption class="table__caption">
+                    DataTable.js Demo
+                  </caption>
+                  <thead class="table__head">
+                    <tr class="table__head__content">
+                      <th class="centered table__head__content__title">#</th>
+                      <th class="centered table__head__content__title">ID</th>
+                      <th class="centered table__head__content__title">Name</th>
+                      <th class="centered table__head__content__title">Img</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="tableBody_categories"
+                    class="table__content"
+                  ></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section inactive users__section">
+        <h2 class="main__section__title">Users</h2>
+        <div class="main__section__container">
+          <div class="main__section__container__controls">
+            <button
+              type="submit"
+              id="newUsers__button"
+              class="main__section__container__controls__newRegister"
+            >
+              <p>Create</p>
+              <img src="../src/Create.svg" alt="" />
+            </button>
+            <button type="submit" id="editUsers__button">
+              <p>Edit</p>
+              <img src="../src/Edit.svg" alt="" />
+            </button>
+            <button type="submit" id="deleteUsers__button">
+              <p>Delete</p>
+              <img
+                src="../src/Delete2.svg"
+                alt="delete"
+                id="deleteUsers__button"
+              />
+            </button>
+          </div>
+          <div class="container my-4 main__section__container__table">
+            <div class="row main__section__container__table__div">
+              <div
+                class="col-sm-12 col-md-12 col-lg-12 col-xl-12 main__section__container__table__div__header"
+              >
+                <table id="datatable_users" class="table table-striped">
+                  <caption class="table__caption">
+                    DataTable.js Demo
+                  </caption>
+                  <thead class="table__head">
+                    <tr class="table__head__content">
+                      <th class="centered table__head__content__title">#</th>
+                      <th class="centered table__head__content__title">ID</th>
+                      <th class="centered table__head__content__title">
+                        Email
+                      </th>
+                      <th class="centered table__head__content__title">
+                        Password
+                      </th>
+                      <th class="centered table__head__content__title">Name</th>
+                      <th class="centered table__head__content__title">Role</th>
+                      <th class="centered table__head__content__title">
+                        Avatar
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody_users" class="table__content"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="main__section"><h2>Categories</h2></section>
+      <section class="main__section"><h2>Users</h2></section> -->
+    </main>
+    <!-- Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- DataTable -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <!-- Main js -->
+    <script src="../js/main.js" type="module"></script>
+  </body>
+</html>

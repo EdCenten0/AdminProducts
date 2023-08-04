@@ -20,6 +20,16 @@ body {
   margin-top: 1rem;
   margin-right: 1rem;
 }
+@media screen and (max-width: 1025px) {
+  .main {
+    margin: 4rem auto;
+  }
+}
+@media screen and (max-width: 468px) {
+  .main {
+    margin: 3rem auto;
+  }
+}
 .main__section__new {
   position: absolute;
   z-index: 10;
@@ -41,6 +51,11 @@ body {
   border: 3px solid #252525;
   width: fit-content;
 }
+@media screen and (max-width: 468px) {
+  .main__section__new__form {
+    padding: 4rem 1rem;
+  }
+}
 .main__section__new__form form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -52,6 +67,11 @@ body {
   margin: 0;
   padding: 1rem;
 }
+@media screen and (max-width: 468px) {
+  .main__section__new__form form p {
+    padding: 1rem;
+  }
+}
 .main__section__new__form form p button,
 .main__section__new__form form p input,
 .main__section__new__form form p textarea {
@@ -62,6 +82,13 @@ body {
   outline: 0;
   border-bottom: 1px solid #927FBF;
   color: #C4BBF0;
+}
+@media screen and (max-width: 468px) {
+  .main__section__new__form form p button,
+  .main__section__new__form form p input,
+  .main__section__new__form form p textarea {
+    padding: 0;
+  }
 }
 .main__section__new__form form p button {
   background-color: #363B4E;
@@ -89,6 +116,12 @@ body {
   justify-content: flex-end;
   gap: 3rem;
 }
+@media screen and (max-width: 768px) {
+  .main__section__container__controls {
+    justify-content: space-around;
+    gap: 1rem;
+  }
+}
 .main__section__container__controls button {
   display: flex;
   justify-content: center;
@@ -115,8 +148,20 @@ body {
 .main__section__container__controls button img {
   width: 25%;
 }
+@media screen and (max-width: 468px) {
+  .main__section__container__controls button p {
+    margin: auto 0;
+    font-size: 1.2rem;
+  }
+}
 .main__section__container__controls button img {
   width: 3rem;
+}
+@media screen and (max-width: 468px) {
+  .main__section__container__controls button img {
+    width: 2rem;
+    margin: auto 0;
+  }
 }
 
 .main__section__container__table {
@@ -187,6 +232,12 @@ body {
 .aside-menu__button img {
   width: 25%;
 }
+@media screen and (max-width: 468px) {
+  .aside-menu__button p {
+    margin: auto 0;
+    font-size: 1.2rem;
+  }
+}
 .aside-menu__button picture {
   align-self: center;
   pointer-events: none;
@@ -198,6 +249,11 @@ body {
 .aside-menu__button img {
   width: 2rem;
   pointer-events: none;
+}
+@media screen and (max-width: 1025px) {
+  .aside-menu {
+    display: none;
+  }
 }
 
 .inactive {

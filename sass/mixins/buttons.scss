@@ -1,5 +1,6 @@
 @use '../variables/colors' as c;
 @use '../variables/font-sizes' as fs;
+@use './media_queries.scss' as mq;
 
 @mixin button{
     display: flex;
@@ -28,5 +29,12 @@
 
     img{
         width: 25%;
+    }
+
+    @include mq.mobile{
+        p{
+            margin: auto 0;
+            font-size: fs.$vsm;
+        }
     }
 }

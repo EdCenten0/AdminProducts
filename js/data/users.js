@@ -31,6 +31,18 @@ export async function saveUserOnAPI(bodyParam) {
   return res;
 }
 
+export async function updateUserOnAPI(bodyParam, id) {
+  const res = fetch(`${API}/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bodyParam),
+  });
+
+  return res;
+}
+
 export async function deleteUserOnAPI(id) {
   const res = await fetch(`${API}/${id}`, {
     method: "DELETE",

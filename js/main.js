@@ -11,7 +11,12 @@ import {
   updateCategoryOnAPI,
   deleteCategoryOnAPI,
 } from "./data/categories.js";
-import { getUsers, saveUserOnAPI, deleteUserOnAPI } from "./data/users.js";
+import {
+  getUsers,
+  saveUserOnAPI,
+  deleteUserOnAPI,
+  updateUserOnAPI,
+} from "./data/users.js";
 
 //
 //Datatable
@@ -417,10 +422,6 @@ async function saveUsers() {
   }
 }
 
-user__form__save_button.addEventListener("click", () => {
-  saveUsers();
-});
-
 //-----------------------------Edit registers----------------------------------------
 
 function setEditPanel(sectionName) {
@@ -556,6 +557,55 @@ category__form__save_button.addEventListener("click", () => {
     saveCategories();
   } else {
     editCategory();
+  }
+});
+
+//Edit users
+
+async function editUser() {
+  const user__save_state = document.getElementById("user__save_state");
+  const form__users_name = document.getElementById("form__users_name");
+  const form__users_email = document.getElementById("form__users_email");
+  const form__users_password = document.getElementById("form__users_password");
+  const form__users_avatarLink = document.getElementById(
+    "form__users_avatarLink"
+  );
+  const form__user_id = document.getElementById("form__user_id");
+
+  let userToSave = {};
+
+  if (!form__users_name.value.length == 0) {
+    userToSave.name = form__users_name.value;
+  }
+  if (!form__users_email.value.length == 0) {
+    userToSave.email = form__users_email.value;
+  }
+  if (!form__users_password.value.length == 0) {
+    userToSave.password = form__users_password.value;
+  }
+  if (!form__users_avatarLink.value.length == 0) {
+    userToSave.avatar = form__users_avatarLink.value;
+  }
+
+  const call = await updateUserOnAPI(userToSave, form__user_id.value);
+  if (call.status === 200) {
+    console.log(await call.json());
+    user__save_state.style = "color:green";
+    user__save_state.innerHTML = "User has been edited succesfully";
+    await initUsersDataTable();
+  } else {
+    let info = await call.json();
+    user__save_state.style = "color:red; transition:all 1s ease;";
+    user__save_state.innerHTML = "Error to edit user: " + info.message;
+  }
+  console.log(call.status);
+}
+
+user__form__save_button.addEventListener("click", () => {
+  if (document.getElementById("form__user_id") == null) {
+    saveUsers();
+  } else {
+    editUser();
   }
 });
 

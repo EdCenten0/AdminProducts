@@ -8,6 +8,7 @@ import {
 import {
   getCategories,
   saveCategoriesOnAPI,
+  updateCategoryOnAPI,
   deleteCategoryOnAPI,
 } from "./data/categories.js";
 import { getUsers, saveUserOnAPI, deleteUserOnAPI } from "./data/users.js";
@@ -377,13 +378,13 @@ async function saveCategories() {
   } else {
     let info = await call.json();
     category__save_state.style = "color: red; transition: all 1s ease;";
-    category__save_state.innerHTML = "Error to save product: " + info.message;
+    category__save_state.innerHTML = "Error to save category: " + info.message;
   }
 }
 
-category__form__save_button.addEventListener("click", () => {
-  saveCategories();
-});
+// category__form__save_button.addEventListener("click", () => {
+//   saveCategories();
+// });
 
 // Post users
 
@@ -509,6 +510,52 @@ product__form__save_button.addEventListener("click", () => {
     saveProduct();
   } else {
     editProduct();
+  }
+});
+
+//Edit categories
+
+async function editCategory() {
+  const category__save_state = document.getElementById("category__save_state");
+  const form__categories_name = document.getElementById(
+    "form__categories_name"
+  );
+  const form__categories_imageLink = document.getElementById(
+    "form__categories_imageLink"
+  );
+  const form__category_id = document.getElementById("form__category_id");
+
+  let categoryToSave = {};
+
+  if (!form__categories_name.value.length == 0) {
+    categoryToSave.name = form__categories_name.value;
+  }
+  if (!form__categories_imageLink.value.length == 0) {
+    categoryToSave.image = form__categories_imageLink.value;
+  }
+
+  const call = await updateCategoryOnAPI(
+    categoryToSave,
+    form__category_id.value
+  );
+  if (call.status === 200) {
+    console.log(await call.json());
+    category__save_state.style = "color:green";
+    category__save_state.innerHTML = "Category has been edited succesfully";
+    await initCategoriesDataTable();
+  } else {
+    let info = await call.json();
+    category__save_state.style = "color:red; transition:all 1s ease;";
+    category__save_state.innerHTML = "Error to edit category: " + info.message;
+  }
+  console.log(call.status);
+}
+
+category__form__save_button.addEventListener("click", () => {
+  if (document.getElementById("form__category_id") == null) {
+    saveCategories();
+  } else {
+    editCategory();
   }
 });
 

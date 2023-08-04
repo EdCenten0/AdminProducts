@@ -38,6 +38,18 @@ export async function saveCategoriesOnAPI(bodyParam) {
   return res;
 }
 
+export async function updateCategoryOnAPI(bodyParam, id) {
+  const res = fetch(`${API}/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bodyParam),
+  });
+
+  return res;
+}
+
 export async function deleteCategoryOnAPI(id) {
   const res = await fetch(`${API}/${id}`, {
     method: "DELETE",

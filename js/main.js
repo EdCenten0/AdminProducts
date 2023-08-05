@@ -108,13 +108,10 @@ let categories = async () => getCategories();
 
 let users = async () => getUsers();
 
-let screenQuery = () => {
-  //Here i will return a number to use on
-  //dataTableOptions to make it responsive
-};
-
 const dataTableOptions = {
+  fixedColumns: true,
   scrollY: "300px",
+  scrollX: "300px",
   lengthMenu: [10, 15, 20, 100, 200, 500],
   columnDefs: [
     { className: "centered" },
@@ -126,18 +123,18 @@ const dataTableOptions = {
   paging: true,
   destroy: true,
   language: {
-    lengthMenu: "Cuantos registros por página?: _MENU_ ",
-    zeroRecords: "Ningún registro encontrado",
-    info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
-    infoEmpty: "Ningún registro encontrado",
-    infoFiltered: "(filtrados desde _MAX_ registros totales)",
-    search: "Buscar:",
-    loadingRecords: "Cargando...",
+    lengthMenu: "Registers per page: _MENU_ ",
+    zeroRecords: "No registers found",
+    info: "Showing from _START_ to _END_ of _TOTAL_ registers",
+    infoEmpty: "No registers found",
+    infoFiltered: "(Filtered from _MAX_ total registers)",
+    search: "Search:",
+    loadingRecords: "Loading...",
     paginate: {
-      first: "Primero",
-      last: "Último",
-      next: "Siguiente",
-      previous: "Anterior",
+      first: "First",
+      last: "Last",
+      next: "Next",
+      previous: "Previus",
     },
   },
 };

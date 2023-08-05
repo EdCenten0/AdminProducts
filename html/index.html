@@ -23,7 +23,7 @@
     />
 
     <!-- Normalize -->
-    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" />
 
     <!-- Font Awesome -->
     <link
@@ -41,13 +41,13 @@
     />
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!-- Title -->
     <title>AdminProducts</title>
   </head>
   <body>
     <section class="main__section__new newProducts inactive">
-      <img id="newProducts__close" src="../src/close.svg" alt="close" />
+      <img id="newProducts__close" src="src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="product__panelTitle">Create a Product</h3>
         <span
@@ -90,7 +90,7 @@
       </div>
     </section>
     <section class="main__section__new newCategories inactive">
-      <img id="newCategories__close" src="../src/close.svg" alt="close" />
+      <img id="newCategories__close" src="src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="category__panelTitle">Create a Category</h3>
         <span style="color: gray" id="category__save_state"></span>
@@ -114,7 +114,7 @@
       </div>
     </section>
     <section class="main__section__new newUsers inactive">
-      <img id="newUsers__close" src="../src/close.svg" alt="close" />
+      <img id="newUsers__close" src="src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="user__panelTitle">Create a User</h3>
         <span style="color: gray" id="user__save_state"></span>
@@ -142,7 +142,7 @@
       </div>
     </section>
     <section class="main__section__new deleteProducts inactive">
-      <img id="deleteProducts__close" src="../src/close.svg" alt="close" />
+      <img id="deleteProducts__close" src="src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="product__panelTitle">Delete a Product</h3>
         <span style="color: gray" id="product__delete_state"></span>
@@ -160,7 +160,7 @@
       </div>
     </section>
     <section class="main__section__new deleteCategories inactive">
-      <img id="deleteCategories__close" src="../src/close.svg" alt="close" />
+      <img id="deleteCategories__close" src="src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="product__panelTitle">Delete a Category</h3>
         <span style="color: gray" id="category__delete_state"></span>
@@ -178,7 +178,7 @@
       </div>
     </section>
     <section class="main__section__new deleteUsers inactive">
-      <img id="deleteUsers__close" src="../src/close.svg" alt="close" />
+      <img id="deleteUsers__close" src="src/close.svg" alt="close" />
       <div class="main__section__new__form">
         <h3 id="product__panelTitle">Delete a User</h3>
         <span style="color: gray" id="user__delete_state"></span>
@@ -195,15 +195,15 @@
     </section>
     <aside class="aside-menu">
       <div id="products__button" class="aside-menu__button">
-        <picture><img src="../src/Shopping-Cart.svg" alt="icon" /></picture>
+        <picture><img src="src/Shopping-Cart.svg" alt="icon" /></picture>
         <p>Products</p>
       </div>
       <div id="categories__button" class="aside-menu__button">
-        <picture><img src="../src/categories.svg" alt="icon" /></picture>
+        <picture><img src="src/categories.svg" alt="icon" /></picture>
         <p>Categories</p>
       </div>
       <div id="users__button" class="aside-menu__button">
-        <picture><img src="../src/user.svg" alt="icon" /></picture>
+        <picture><img src="src/user.svg" alt="icon" /></picture>
         <p>Users</p>
       </div>
     </aside>
@@ -218,15 +218,15 @@
               class="main__section__container__controls__newRegister"
             >
               <p>Create</p>
-              <img src="../src/Create.svg" alt="" />
+              <img src="src/Create.svg" alt="" />
             </button>
             <button type="submit" id="editProducts__button">
               <p>Edit</p>
-              <img src="../src/Edit.svg" alt="" />
+              <img src="src/Edit.svg" alt="" />
             </button>
             <button type="submit" id="deleteProducts__button">
               <p>Delete</p>
-              <img src="../src/Delete2.svg" alt="delete" />
+              <img src="src/Delete2.svg" alt="delete" />
             </button>
           </div>
           <div class="container my-4 main__section__container__table">
@@ -275,15 +275,15 @@
               class="main__section__container__controls__newRegister"
             >
               <p>Create</p>
-              <img src="../src/Create.svg" alt="" />
+              <img src="src/Create.svg" alt="" />
             </button>
             <button type="submit" id="editCategories__button">
               <p>Edit</p>
-              <img src="../src/Edit.svg" alt="" />
+              <img src="src/Edit.svg" alt="" />
             </button>
             <button type="submit" id="deleteCategories__button">
               <p>Delete</p>
-              <img src="../src/Delete2.svg" alt="delete" />
+              <img src="src/Delete2.svg" alt="delete" />
             </button>
           </div>
           <div class="container my-4 main__section__container__table">
@@ -324,16 +324,16 @@
               class="main__section__container__controls__newRegister"
             >
               <p>Create</p>
-              <img src="../src/Create.svg" alt="" />
+              <img src="src/Create.svg" alt="" />
             </button>
             <button type="submit" id="editUsers__button">
               <p>Edit</p>
-              <img src="../src/Edit.svg" alt="" />
+              <img src="src/Edit.svg" alt="" />
             </button>
             <button type="submit" id="deleteUsers__button">
               <p>Delete</p>
               <img
-                src="../src/Delete2.svg"
+                src="src/Delete2.svg"
                 alt="delete"
                 id="deleteUsers__button"
               />
@@ -384,6 +384,6 @@
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <!-- Main js -->
-    <script src="../js/main.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
   </body>
 </html>

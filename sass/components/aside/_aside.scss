@@ -48,5 +48,23 @@
         display: none;
     }
 
+
+    //Mobile
+
+    &__mobile{
+        position: absolute;
+        display:flex;
+        justify-content: center;
+        width: 90%;
+        padding: 30rem 1rem;
+        border: 3px solid c.$black;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 6rem auto;
+        z-index: 20;
+    }
     
 }
+

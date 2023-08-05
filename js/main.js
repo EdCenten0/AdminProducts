@@ -249,22 +249,40 @@ function changePanel(event) {
     !categories__section.classList.contains("inactive");
   let isUsersPanelActive = !users__section.classList.contains("inactive");
 
-  if (isProductsPanelActive && event.target.id == "categories__button") {
+  if (
+    (isProductsPanelActive && event.target.id == "categories__button") ||
+    (isProductsPanelActive && event.target.id == "categories__button__mobile")
+  ) {
     products__section.classList.add("inactive");
     categories__section.classList.remove("inactive");
-  } else if (isProductsPanelActive && event.target.id == "users__button") {
+  } else if (
+    (isProductsPanelActive && event.target.id == "users__button") ||
+    (isProductsPanelActive && event.target.id == "users__button__mobile")
+  ) {
     products__section.classList.add("inactive");
     users__section.classList.remove("inactive");
-  } else if (isCategoriesPanelActive && event.target.id == "products__button") {
+  } else if (
+    (isCategoriesPanelActive && event.target.id == "products__button") ||
+    (isCategoriesPanelActive && event.target.id == "products__button__mobile")
+  ) {
     categories__section.classList.add("inactive");
     products__section.classList.remove("inactive");
-  } else if (isCategoriesPanelActive && event.target.id == "users__button") {
+  } else if (
+    (isCategoriesPanelActive && event.target.id == "users__button") ||
+    (isCategoriesPanelActive && event.target.id == "users__button__mobile")
+  ) {
     categories__section.classList.add("inactive");
     users__section.classList.remove("inactive");
-  } else if (isUsersPanelActive && event.target.id == "products__button") {
+  } else if (
+    (isUsersPanelActive && event.target.id == "products__button") ||
+    (isUsersPanelActive && event.target.id == "products__button__mobile")
+  ) {
     users__section.classList.add("inactive");
     products__section.classList.remove("inactive");
-  } else if (isUsersPanelActive && event.target.id == "categories__button") {
+  } else if (
+    (isUsersPanelActive && event.target.id == "categories__button") ||
+    (isUsersPanelActive && event.target.id == "categories__button__mobile")
+  ) {
     users__section.classList.add("inactive");
     categories__section.classList.remove("inactive");
   }
@@ -716,3 +734,25 @@ async function deleteUser() {
 user__form__delete_button.addEventListener("click", () => {
   deleteUser();
 });
+
+// ----------Events on ham menu for mobile and tablet-------------
+
+const ham__menu__button = document.querySelector(".ham__menu");
+const aside_menu__mobile = document.querySelector(".aside-menu__mobile");
+
+ham__menu__button.addEventListener("click", () => {
+  aside_menu__mobile.classList.toggle("inactive");
+  console.log(aside_menu__mobile);
+});
+
+const products__button__mobile = document.getElementById(
+  "products__button__mobile"
+);
+const categories__button__mobile = document.getElementById(
+  "categories__button__mobile"
+);
+const users__button__mobile = document.getElementById("users__button__mobile");
+
+products__button__mobile.addEventListener("click", changePanel);
+categories__button__mobile.addEventListener("click", changePanel);
+users__button__mobile.addEventListener("click", changePanel);

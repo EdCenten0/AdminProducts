@@ -10,6 +10,26 @@ body {
   position: relative;
 }
 
+.ham__menu {
+  position: absolute;
+  right: 0;
+  margin: 0rem 2rem;
+  cursor: pointer;
+}
+.ham__menu img {
+  width: 4rem;
+}
+@media screen and (max-width: 468px) {
+  .ham__menu img {
+    width: 3rem;
+  }
+}
+@media (min-width: 1025px) {
+  .ham__menu {
+    display: none;
+  }
+}
+
 .main {
   background-color: #4F3B78;
   border: 1px solid #252525;
@@ -254,6 +274,20 @@ body {
   .aside-menu {
     display: none;
   }
+}
+.aside-menu__mobile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  padding: 30rem 1rem;
+  border: 3px solid #252525;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 6rem auto;
+  z-index: 20;
 }
 
 .inactive {

@@ -753,6 +753,19 @@ const categories__button__mobile = document.getElementById(
 );
 const users__button__mobile = document.getElementById("users__button__mobile");
 
-products__button__mobile.addEventListener("click", changePanel);
-categories__button__mobile.addEventListener("click", changePanel);
-users__button__mobile.addEventListener("click", changePanel);
+// products__button__mobile.addEventListener("click", changePanel);
+// categories__button__mobile.addEventListener("click", changePanel);
+// users__button__mobile.addEventListener("click", changePanel);
+
+products__button__mobile.addEventListener("click", (event) => {
+  changePanel(event);
+  aside_menu__mobile.classList.toggle("inactive");
+});
+categories__button__mobile.addEventListener("click", (event) => {
+  changePanel(event);
+  aside_menu__mobile.classList.toggle("inactive");
+});
+users__button__mobile.addEventListener("click", (event) => {
+  changePanel(event);
+  aside_menu__mobile.classList.toggle("inactive");
+});

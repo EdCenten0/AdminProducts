@@ -278,15 +278,15 @@ body {
 .aside-menu__mobile {
   position: absolute;
   display: flex;
-  justify-content: center;
   width: 90%;
-  padding: 30rem 1rem;
+  padding: 2rem 1rem;
+  gap: 1rem;
   border: 3px solid #252525;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: 6rem auto;
+  margin: 4rem auto;
   z-index: 20;
 }
 

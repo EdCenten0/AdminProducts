@@ -369,10 +369,6 @@ async function saveProduct() {
   }
 }
 
-// product__form__save_button.addEventListener("click", () => {
-//   saveProduct();
-// });
-
 // Post categories
 
 async function saveCategories() {
@@ -401,10 +397,6 @@ async function saveCategories() {
     category__save_state.innerHTML = "Error to save category: " + info.message;
   }
 }
-
-// category__form__save_button.addEventListener("click", () => {
-//   saveCategories();
-// });
 
 // Post users
 
@@ -749,10 +741,6 @@ const categories__button__mobile = document.getElementById(
   "categories__button__mobile"
 );
 const users__button__mobile = document.getElementById("users__button__mobile");
-
-// products__button__mobile.addEventListener("click", changePanel);
-// categories__button__mobile.addEventListener("click", changePanel);
-// users__button__mobile.addEventListener("click", changePanel);
 
 products__button__mobile.addEventListener("click", (event) => {
   changePanel(event);

@@ -111,7 +111,6 @@ let users = async () => getUsers();
 const dataTableOptions = {
   fixedColumns: true,
   scrollY: "300px",
-  scrollX: "300px",
   lengthMenu: [10, 15, 20, 100, 200, 500],
   columnDefs: [
     { className: "centered" },
